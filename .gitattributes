@@ -1,0 +1,6 @@
+# Windows checkouts must not hand CRLF to the container
+*.sh text eol=lf
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf
+.dockerignore text eol=lf
+* text=auto
