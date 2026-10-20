@@ -1,0 +1,830 @@
+{
+  "nav.houses": {
+    "am": "ቤቶች",
+    "back": "houses"
+  },
+  "nav.mine": {
+    "am": "የእኔ ቁጥሮች",
+    "back": "My numbers"
+  },
+  "nav.signIn": {
+    "am": "ይግቡ",
+    "back": "Enter"
+  },
+  "nav.register": {
+    "am": "መለያ ይፍጠሩ",
+    "back": "Create an account"
+  },
+  "nav.signOut": {
+    "am": "ዘግተህ ውጣ",
+    "back": "Close and exit"
+  },
+  "hero.rule": {
+    "am": "የያዙት ቁጥር ይፋዊ ነው። ስምህ በጭራሽ አይከማችም እና በጭራሽ አይታይም።",
+    "back": "The number you hold is public. Your name will never be stored and will never be displayed."
+  },
+  "stats.houses": {
+    "am": "ቤቶች",
+    "back": "houses"
+  },
+  "stats.slots": {
+    "am": "ጠቅላላ ተሳታፊ ቦታዎች",
+    "back": "Total participating locations"
+  },
+  "stats.priceRule": {
+    "am": "ዋጋ ከተሳታፊዎች ብዛት ጋር እኩል ነው",
+    "script": "waa-gaa ka-ta-saa-taa-fi-wo-ce be-zaa-te gaa-re glottal_e-ku-le na-we",
+    "authored": true
+  },
+  "auth.registerTitle": {
+    "am": "መለያዎን ይፍጠሩ",
+    "back": "Create your account"
+  },
+  "auth.signInTitle": {
+    "am": "ወደ መለያዎ ይግቡ",
+    "back": "Log in to your account"
+  },
+  "auth.phone": {
+    "am": "ስልክ ቁጥር",
+    "back": "phone number"
+  },
+  "auth.phoneHint": {
+    "am": "የቴሌቢር ቦርሳህ የሚጠቀመው ቁጥር ለምሳሌ 0912345678።",
+    "back": "The number your Telebir wallet uses eg 0912345678."
+  },
+  "auth.pin": {
+    "am": "ከአራት እስከ ስድስት አሃዝ ፒን",
+    "back": "Four to six digit PIN"
+  },
+  "auth.pinHint": {
+    "am": "እዚህ የተመረጠው ይህን ፖርታል ለመጠበቅ ብቻ ነው። የቴሌቢር ፒንህ አይደለም።",
+    "back": "It is selected here only to protect this portal. Not your Telebir PIN."
+  },
+  "auth.pinConfirm": {
+    "am": "ፒኑን እንደገና ያስገቡ",
+    "script": "pi-nu-ne glottal_e-ne-da-ga-naa yaa-se-ga-bu",
+    "authored": true
+  },
+  "auth.accept": {
+    "am": "ቢያንስ የአስራ ስምንት አመት ልጅ ነኝ እና የቤቱን ህጎች እቀበላለሁ።",
+    "back": "I am at least eighteen years old and accept the house rules."
+  },
+  "auth.submitRegister": {
+    "am": "መለያ ይፍጠሩ",
+    "back": "Create an account"
+  },
+  "auth.submitSignIn": {
+    "am": "ይግቡ",
+    "back": "Enter"
+  },
+  "auth.haveAccount": {
+    "am": "መለያ አለህ? ይግቡ",
+    "back": "Do you have an account? Enter"
+  },
+  "auth.noAccount": {
+    "am": "እስካሁን መለያ የለም? አንድ ፍጠር",
+    "back": "Don't have an account yet? Create one"
+  },
+  "auth.privacyNote": {
+    "am": "ስልክ ቁጥሩ እና ፒኑ ብቻ ተቀምጠዋል፣ እና ፒኑ እንደ ሃሽ ተቀምጧል። ስለእርስዎ ሌላ ምንም ነገር አይጠየቅም።",
+    "script": "se-le-ke qu-the-ru glottal_e-naa pi-nu be-caa ta-qa-me-tha-waa-le-comma glottal_e-naa pi-nu glottal_e-ne-da haa-she ta-qa-me-thwa-le-stop se-la-glottal_e-re-se-wo lee-laa me-ne-me na-ga-re glottal_a-ye-tha-ya-qe-me-stop",
+    "authored": true
+  },
+  "error.phone": {
+    "am": "ትክክለኛ የኢትዮጵያ ስልክ ቁጥር ከ09 ወይም 07 ጀምሮ ያስገቡ።",
+    "back": "Enter a valid Ethiopian phone number starting with 09 or 07."
+  },
+  "error.pin": {
+    "am": "ፒኑ ከአራት እስከ ስድስት አሃዞች መሆን አለበት።",
+    "back": "The PIN must be between four and six digits."
+  },
+  "error.pinMismatch": {
+    "am": "ሁለቱ ፒኖች አንድ አይነት አይደሉም።",
+    "back": "No two pins are identical."
+  },
+  "error.accept": {
+    "am": "ቢያንስ አስራ ስምንት መሆንዎን ያረጋግጡ እና የቤት ደንቦችን ይቀበሉ።",
+    "back": "Make sure you are at least eighteen and accept the house rules."
+  },
+  "error.login": {
+    "am": "ስልክ ቁጥሩ ወይም ፒኑ የተሳሳተ ነው።",
+    "back": "The phone number or PIN is incorrect."
+  },
+  "error.exists": {
+    "am": "ይህ ስልክ ቁጥር አስቀድሞ መለያ አለው። በምትኩ ይግቡ።",
+    "back": "This phone number already has an account. Sign in instead."
+  },
+  "houses.title": {
+    "am": "ቤቶች እና ዋጋቸው",
+    "script": "bee-to-ce glottal_e-naa waa-gaa-ca-we",
+    "authored": true
+  },
+  "houses.col.house": {
+    "am": "ቤት",
+    "back": "at home"
+  },
+  "houses.col.size": {
+    "am": "ተሳታፊዎች",
+    "back": "Participants"
+  },
+  "houses.col.price": {
+    "am": "የነጠላ ዋጋ",
+    "script": "ya-na-tha-laa waa-gaa",
+    "authored": true
+  },
+  "houses.col.taken": {
+    "am": "የተወሰደ",
+    "back": "Taken"
+  },
+  "houses.choose": {
+    "am": "ቁጥር ይምረጡ",
+    "back": "Choose a number"
+  },
+  "houses.round": {
+    "am": "ዙር",
+    "back": "Round"
+  },
+  "house.title": {
+    "am": "{0} ተሳታፊ ያለው ቤት",
+    "script": "{0} ta-saa-taa-fi yaa-la-we bee-te",
+    "authored": true
+  },
+  "house.pickTitle": {
+    "am": "ማንኛውንም ነፃ ቁጥር ይምረጡ",
+    "back": "Choose any free number"
+  },
+  "house.pickHint": {
+    "am": "የመረጡት ቁጥር ለአስራ አምስት ደቂቃ ተይዟል፣ ክፍያው ካልደረሰ ግን ይለቀቃል።",
+    "script": "ya-ma-ra-thu-te qu-the-re la-glottal_a-se-raa glottal_a-me-se-te da-qi-qaa ta-ye-zwa-le-comma ke-fe-yaa-we kaa-le-da-ra-sa ge-ne ye-la-qa-qaa-le-stop",
+    "authored": true
+  },
+  "house.selected": {
+    "am": "ቁጥር {0} መርጠዋል።",
+    "back": "You have selected the number {0}."
+  },
+  "house.priceRule": {
+    "am": "አንድ ተሳታፊ እዚህ {0} ብር ይከፍላል።",
+    "back": "A participant here pays {0} Rs."
+  },
+  "house.pay": {
+    "am": "በቴሌቢር {0} ብር ይከፍሉ።",
+    "script": "ba-tee-lee-bi-re {0} be-re ye-ka-fe-lu-stop",
+    "authored": true
+  },
+  "house.release": {
+    "am": "ይህን ቁጥር ይልቀቁ",
+    "back": "Release this number"
+  },
+  "house.grid": {
+    "am": "ቁጥር አንድ እስከ {0}",
+    "back": "number one to {0}"
+  },
+  "house.mineLabel": {
+    "am": "የአንተ",
+    "back": "yours"
+  },
+  "pay.title": {
+    "am": "የቴሌቢር ክፍያ",
+    "script": "ya-tee-lee-bi-re ke-fe-yaa",
+    "authored": true
+  },
+  "pay.wallet": {
+    "am": "ለቁጥር {1} የቴሌቢር ዲጂታል ቦርሳህ {0} ብር ተከፍሏል።",
+    "script": "la-qu-the-re {1} ya-tee-lee-bi-re di-ji-taa-le bo-re-saa-he {0} be-re ta-ka-fe-lwa-le-stop",
+    "authored": true
+  },
+  "pay.open": {
+    "am": "ለመክፈል ቴሌቢርን ይክፍቱ",
+    "script": "la-ma-ke-fa-le tee-lee-bi-re-ne ye-ke-fe-tu",
+    "authored": true
+  },
+  "pay.waiting": {
+    "am": "ማረጋገጫውን ከቴሌቢር በመጠበቅ ላይ።",
+    "back": "Awaiting confirmation from Telebir."
+  },
+  "pay.done": {
+    "am": "ክፍያ ተረጋግጧል። ቁጥር {0} ለዚህ ዙር ያንተ ነው።",
+    "back": "Payment confirmed. The number {0} is yours for this round."
+  },
+  "pay.reopen": {
+    "am": "የክፍያ ገጹን እንደገና ይክፍቱ",
+    "script": "ya-ke-fe-yaa ga-tsu-ne glottal_e-ne-da-ga-naa ye-ke-fe-tu",
+    "authored": true
+  },
+  "pay.simulateButton": {
+    "am": "ይህን ትዕዛዝ እንደተከፈለ ይመልክቱ",
+    "script": "ye-he-ne te-pharyngeal_e-zaa-ze glottal_e-ne-da-ta-ka-fa-la ye-ma-le-ke-tu",
+    "authored": true
+  },
+  "pay.missingVariables": {
+    "am": "የጎደሉ ቅንብሮች፥ {0}",
+    "script": "ya-go-da-lu qe-ne-be-ro-ce-colon {0}",
+    "authored": true
+  },
+  "pay.stillPending": {
+    "am": "ክፍያው ገና አልተጠናቀቀም። በቴሌቢር መተግበሪያ ይጨርሱ፣ ከዚያ ይህን ገጽ ዳግም ይጫኑ።",
+    "script": "ke-fe-yaa-we ga-naa glottal_a-le-ta-tha-naa-qa-qa-me-stop ba-tee-lee-bi-re ma-ta-ge-ba-ri-yaa ye-cha-re-su-comma ka-zi-yaa ye-he-ne ga-tse daa-ge-me ye-chaa-nu-stop",
+    "authored": true
+  },
+  "pay.failed": {
+    "am": "ክፍያው ሊረጋገጥ አልተቻለም።",
+    "script": "ke-fe-yaa-we li-ra-gaa-ga-the glottal_a-le-ta-caa-la-me-stop",
+    "authored": true
+  },
+  "mine.title": {
+    "am": "የእኔ ቁጥሮች",
+    "back": "My numbers"
+  },
+  "mine.empty": {
+    "am": "እስካሁን ቁጥር አልያዝክም።",
+    "back": "You don't have a number yet."
+  },
+  "mine.row": {
+    "am": "ቤት {0} · ቁጥር {1}",
+    "back": "House {0} · Number {1}"
+  },
+  "mine.pending": {
+    "am": "ክፍያ በመጠበቅ ላይ",
+    "back": "Awaiting payment"
+  },
+  "mine.won": {
+    "am": "በቁጥር {1} ዙር {0} አሸነፉ።",
+    "script": "ba-qu-the-re {1} zu-re {0} glottal_a-sha-na-fu-stop",
+    "authored": true,
+    "back": "?? {0} ???? {1} ?????"
+  },
+  "mine.lost": {
+    "am": "ዙር {0} አላሸነፉም።",
+    "script": "zu-re {0} glottal_a-laa-sha-na-fu-me-stop",
+    "authored": true
+  },
+  "mine.released": {
+    "am": "ተለቋል",
+    "back": "Released"
+  },
+  "mine.payNow": {
+    "am": "አሁን ይከፍሉ።",
+    "script": "glottal_a-hu-ne ye-ka-fe-lu-stop",
+    "authored": true
+  },
+  "mine.amount": {
+    "am": "{0} ብር ተከፍሏል።",
+    "script": "{0} be-re ta-ka-fe-lwa-le-stop",
+    "authored": true
+  },
+  "draws.winner": {
+    "am": "አሸናፊ ቁጥር",
+    "back": "???? ???"
+  },
+  "draws.participants": {
+    "am": "ተሳታፊዎች",
+    "back": "Participants"
+  },
+  "draws.house": {
+    "am": "{0} ተሳታፊ ያለው ቤት",
+    "script": "{0} ta-saa-taa-fi yaa-la-we bee-te",
+    "authored": true
+  },
+  "draws.payoutPending": {
+    "am": "ገንዘቡ ተመዘገበ፣ ለመፍታት ይጠብቃል።",
+    "script": "ga-ne-za-bu ta-ma-za-ga-ba-comma la-ma-fe-taa-te ye-tha-be-qaa-le-stop",
+    "authored": true
+  },
+  "rules.title": {
+    "am": "የቤት ደንቦች",
+    "back": "House rules"
+  },
+  "rules.pick": {
+    "am": "ቁጥሩን እራስዎ ይመርጣሉ። ነፃ ቁጥሮች በቤቱ ውስጥ ላሉ ሰዎች ሁሉ ክፍት ናቸው።",
+    "script": "qu-the-ru-ne glottal_e-raa-se-wo ye-ma-re-thaa-lu-stop na-tzaa qu-the-ro-ce ba-bee-tu we-se-the laa-lu sa-wo-ce hu-lu ke-fe-te naa-ca-we-stop",
+    "authored": true
+  },
+  "rules.privacy": {
+    "am": "ሁሉም ሰው ቁጥሮችን እና ዋጋዎችን ይመለከታል። ማንም ሰው ስሞችን ወይም ስልክ ቁጥሮችን አያይም።",
+    "script": "hu-lu-me sa-we qu-the-ro-ce-ne glottal_e-naa waa-gaa-wo-ce-ne ye-ma-la-ka-taa-le-stop maa-ne-me sa-we se-mo-ce-ne wa-ye-me se-le-ke qu-the-ro-ce-ne glottal_a-yaa-ye-me-stop",
+    "authored": true
+  },
+  "common.birr": {
+    "am": "ብር",
+    "back": "Rs"
+  },
+  "common.back": {
+    "am": "ተመለስ",
+    "back": "come back"
+  },
+  "common.number": {
+    "am": "ቁጥር",
+    "back": "No"
+  },
+  "common.round": {
+    "am": "ዙር",
+    "back": "Round"
+  },
+  "common.reload": {
+    "am": "ዳግም ጫን",
+    "back": "Reinstall"
+  },
+  "admin.none": {
+    "am": "እስካሁን የተጠናቀቀ ቤት የለም።",
+    "back": "No house is finished yet."
+  },
+  "error.signIn": {
+    "am": "እባክዎ መጀመሪያ ይግቡ።",
+    "back": "Please login first."
+  },
+  "error.numberTaken": {
+    "am": "ይህ ቁጥር የተወሰደው ከአፍታ በፊት ነው። ሌላ ነፃ ቁጥር ይምረጡ።",
+    "back": "This number was taken a moment ago. Choose another free number."
+  },
+  "error.alreadyHolds": {
+    "am": "አስቀድመው በዚህ ቤት ውስጥ ቁጥር ይይዛሉ። ሌላ ከመምረጥዎ በፊት ይልቀቁት።",
+    "script": "glottal_a-se-qa-de-ma-we ba-zi-he bee-te we-se-the qu-the-re ye-ye-zaa-lu-stop lee-laa ka-ma-me-ra-the-wo ba-fi-te ye-le-qa-qu-te-stop",
+    "authored": true
+  },
+  "error.houseClosed": {
+    "am": "ይህ ቤት ለአሁኑ ዙር ዝግ ነው።",
+    "back": "This house is closed for the current round."
+  },
+  "common.amount": {
+    "am": "የተከፈለው መጠን",
+    "back": "Amount paid"
+  },
+  "common.status": {
+    "am": "ሁኔታ",
+    "back": "situation"
+  },
+  "brand.tagline": {
+    "am": "ላኪ · የዕጣ ማውጫ ቤቶች ዲጂታል ፖርታል",
+    "script": "laa-ki · ya-pharyngeal_e-thaa maa-we-chaa bee-to-ce di-ji-taa-le po-re-taa-le",
+    "authored": true
+  },
+  "brand.demo": {
+    "am": "ዴሞ ስሪት · ለሙከራ ብቻ · የኢትዮጵያ ብር · ቴሌቢር",
+    "script": "dee-mo se-ri-te · la-mu-ka-raa be-caa · ya-glottal_i-te-yo-phe-yaa be-re · tee-lee-bi-re",
+    "authored": true
+  },
+  "nav.draws": {
+    "am": "የዕጣ ማውጫ ውጤቶች",
+    "script": "ya-pharyngeal_e-thaa maa-we-chaa we-thee-to-ce",
+    "authored": true
+  },
+  "nav.openPortal": {
+    "am": "ወደ ቤቶቹ ይግቡ",
+    "script": "wa-da bee-to-cu ye-ge-bu",
+    "authored": true
+  },
+  "hero.title": {
+    "am": "ቁጥርዎን ይምረጡ፣ በቴሌቢር ይከፍሉ፣ ዕጣው በዚያ ቤት ውስጥ ይካሄዳል።",
+    "script": "qu-the-re-wo-ne ye-me-ra-thu-comma ba-tee-lee-bi-re ye-ka-fe-lu-comma pharyngeal_e-thaa-we ba-zi-yaa bee-te we-se-the ye-kaa-hee-daa-le-stop",
+    "authored": true
+  },
+  "hero.body": {
+    "am": "በእያንዳንዱ ቤት የራሱ ዋጋ አለው። አንድ ቤት 20 ብር ነው። አንድ 100 ብር ነው። አንድ 5000 ብር ነው። ቤቱ ሲሞላ፣ ዕጣው በራስ-ሰር በዚያ ቤት ተሳታፊዎች መካከል ይካሄዳል። ሙሉው የሽልማት ገንዘብ ወደ 3 ቁጥሮች ይሄዳሉ።",
+    "script": "ba-glottal_e-yaa-ne-daa-ne-du bee-te ya-raa-su waa-gaa glottal_a-la-we-stop glottal_a-ne-de bee-te 20 be-re na-we-stop glottal_a-ne-de 100 be-re na-we-stop glottal_a-ne-de 5000 be-re na-we-stop bee-tu si-mo-laa-comma pharyngeal_e-thaa-we ba-raa-se-hyphen-sa-re ba-zi-yaa bee-te ta-saa-taa-fi-wo-ce ma-kaa-ka-le ye-kaa-hee-daa-le-stop mu-lu-we ya-she-le-maa-te ga-ne-za-be wa-da 3 qu-the-ro-ce ye-hee-daa-lu-stop",
+    "authored": true
+  },
+  "stats.draw": {
+    "am": "ለእያንዳንዱ ቤት በራስ-ሰር ዕጣ ማውጫ",
+    "script": "la-glottal_e-yaa-ne-daa-ne-du bee-te ba-raa-se-hyphen-sa-re pharyngeal_e-thaa maa-we-chaa",
+    "authored": true
+  },
+  "houses.col.pot": {
+    "am": "የሽልማት ገንዘብ",
+    "script": "ya-she-le-maa-te ga-ne-za-be",
+    "authored": true
+  },
+  "houses.col.free": {
+    "am": "ነፃ",
+    "script": "na-tzaa",
+    "authored": true
+  },
+  "houses.completed": {
+    "am": "ቤቱ ተሞልቷል፣ ዕጣው ቀድሞ ተካሄዷል።",
+    "script": "bee-tu ta-mo-le-twa-le-comma pharyngeal_e-thaa-we qa-de-mo ta-kaa-hee-dwa-le-stop",
+    "authored": true
+  },
+  "status.free": {
+    "am": "ነፃ",
+    "script": "na-tzaa",
+    "authored": true
+  },
+  "status.held": {
+    "am": "ተይዟል",
+    "script": "ta-ye-zwa-le",
+    "authored": true
+  },
+  "status.paid": {
+    "am": "ተከፈለ",
+    "script": "ta-ka-fa-la",
+    "authored": true
+  },
+  "pay.simulated": {
+    "am": "ሙከራ ሁነታ፥ ይህ ውሸብ ነው። ምንም ገንዘብ አልተመዘገበም፣ የቴሌቢር ትዕዛዝም የለም።",
+    "script": "mu-ka-raa hu-na-taa-colon ye-he we-sha-be na-we-stop me-ne-me ga-ne-za-be glottal_a-le-ta-ma-za-ga-ba-me-comma ya-tee-lee-bi-re te-pharyngeal_e-zaa-ze-me ya-la-me-stop",
+    "authored": true
+  },
+  "pay.notConfigured": {
+    "am": "የቴሌቢር ሻጭ መለያ ገና አልተሞላም፣ ስለዚህ በእውነት ክፍያ ማስጀመር አይቻልም።",
+    "script": "ya-tee-lee-bi-re shaa-che ma-la-yaa ga-naa glottal_a-le-ta-mo-laa-me-comma se-la-zi-he ba-glottal_e-we-na-te ke-fe-yaa maa-se-ja-ma-re glottal_a-ye-caa-le-me-stop",
+    "authored": true
+  },
+  "mine.paid": {
+    "am": "ተከፈለና በዕጣ ማውጫው ውስጥ ገብቷል",
+    "script": "ta-ka-fa-la-naa ba-pharyngeal_e-thaa maa-we-chaa-we we-se-the ga-be-twa-le",
+    "authored": true
+  },
+  "draws.title": {
+    "am": "የዕጣ ማውጫ ውጤቶች",
+    "script": "ya-pharyngeal_e-thaa maa-we-chaa we-thee-to-ce",
+    "authored": true
+  },
+  "draws.subtitle": {
+    "am": "ቤቱ ሲሞላ ዕጣ ማውጫው በራስ-ሰር ይካሄዳል፣ የዚያ ቤት ተሳታፊዎች ብቻ ናቸው።",
+    "script": "bee-tu si-mo-laa pharyngeal_e-thaa maa-we-chaa-we ba-raa-se-hyphen-sa-re ye-kaa-hee-daa-le-comma ya-zi-yaa bee-te ta-saa-taa-fi-wo-ce be-caa naa-ca-we-stop",
+    "authored": true
+  },
+  "draws.pot": {
+    "am": "የሽልማት ገንዘብ",
+    "script": "ya-she-le-maa-te ga-ne-za-be",
+    "authored": true
+  },
+  "draws.empty": {
+    "am": "እስካሁን ምንም ዕጣ ማውጫ አልተጠናቀቀም",
+    "script": "glottal_e-se-kaa-hu-ne me-ne-me pharyngeal_e-thaa maa-we-chaa glottal_a-le-ta-tha-naa-qa-qa-me",
+    "authored": true
+  },
+  "draws.seedNote": {
+    "am": "ዘሩና የማረጋገጫ ሃሹ ለሁሉ ግልጽ ነው። ማንኛውም አሸናፊው ቁጥር ከእነዚህ ተሳታፊዎች መካከል እንዴት እንደወጣ ማረጋገጥ ይችላል።",
+    "script": "za-ru-naa ya-maa-ra-gaa-ga-chaa haa-shu la-hu-lu ge-le-tse na-we-stop maa-ne-nyaa-we-me glottal_a-sha-naa-fi-we qu-the-re ka-glottal_e-na-zi-he ta-saa-taa-fi-wo-ce ma-kaa-ka-le glottal_e-ne-dee-te glottal_e-ne-da-wa-thaa maa-ra-gaa-ga-the ye-ce-laa-le-stop",
+    "authored": true
+  },
+  "rules.price": {
+    "am": "በእያንዳንዱ ቤት የራሱ ዋጋ አለው። ዋጋው ከተሳታፊዎች ብዛት ጋር እኩል አይደለም።",
+    "script": "ba-glottal_e-yaa-ne-daa-ne-du bee-te ya-raa-su waa-gaa glottal_a-la-we-stop waa-gaa-we ka-ta-saa-taa-fi-wo-ce be-zaa-te gaa-re glottal_e-ku-le glottal_a-ye-da-la-me-stop",
+    "authored": true
+  },
+  "rules.pay": {
+    "am": "በቴሌቢር ዲጂታል መለያዎ ክፍያዎን ይከፍላሉ። ቴሌቢር ክፍያዎን ሲያረጋገጥ ብቻ ቁጥሩ የእርስዎ ይሆናል።",
+    "script": "ba-tee-lee-bi-re di-ji-taa-le ma-la-yaa-wo ke-fe-yaa-wo-ne ye-ka-fe-laa-lu-stop tee-lee-bi-re ke-fe-yaa-wo-ne si-yaa-ra-gaa-ga-the be-caa qu-the-ru ya-glottal_e-re-se-wo ye-ho-naa-le-stop",
+    "authored": true
+  },
+  "rules.draw": {
+    "am": "ቤቱ ሲሞላ ዕጣ ማውጫው በራስ-ሰር በቤቱ ተሳታፊዎች መካከል ይካሄዳል። 3 ቁጥሮች ሙሉውን የሽልማት ገንዘብ ይወሰዳሉ፥ 1ኛ፣ 2ኛ፣ 3ኛ።",
+    "script": "bee-tu si-mo-laa pharyngeal_e-thaa maa-we-chaa-we ba-raa-se-hyphen-sa-re ba-bee-tu ta-saa-taa-fi-wo-ce ma-kaa-ka-le ye-kaa-hee-daa-le-stop 3 qu-the-ro-ce mu-lu-we-ne ya-she-le-maa-te ga-ne-za-be ye-wa-sa-daa-lu-colon 1-nyaa-comma 2-nyaa-comma 3-nyaa-stop",
+    "authored": true
+  },
+  "footer.note": {
+    "am": "ላኪ የዕጣ ማውጫ ሂደት ዴሞ ነው። በእውነት ገንዘብ ለማካሄድ የቴሌቢር ሻጭ ውልና የዕጣ ማውጫ ፈቃድ ያስፈልጋል።",
+    "script": "laa-ki ya-pharyngeal_e-thaa maa-we-chaa hi-da-te dee-mo na-we-stop ba-glottal_e-we-na-te ga-ne-za-be la-maa-kaa-hee-de ya-tee-lee-bi-re shaa-che we-le-naa ya-pharyngeal_e-thaa maa-we-chaa fa-qaa-de yaa-se-fa-le-gaa-le-stop",
+    "authored": true
+  },
+  "admin.title": {
+    "am": "የተሞሉ ቤቶች ዕጣ ማውጫ",
+    "script": "ya-ta-mo-lu bee-to-ce pharyngeal_e-thaa maa-we-chaa",
+    "authored": true
+  },
+  "admin.ran": {
+    "am": "ለ {0} ቤቶች ዕጣ ማውጫ ተጠናቀቀ።",
+    "script": "la {0} bee-to-ce pharyngeal_e-thaa maa-we-chaa ta-tha-naa-qa-qa-stop",
+    "authored": true
+  },
+  "status.failed": {
+    "am": "ክፍያ አልተረጋገጠም",
+    "script": "ke-fe-yaa glottal_a-le-ta-ra-gaa-ga-tha-me",
+    "authored": true
+  },
+  "houses.subtitle": {
+    "am": "በእያንዳንዱ ቤት የራሱ ዋጋ አለው። የአገልግሎት ክፍያው ከዋጋው ውስጥ ይቀንሳል።",
+    "script": "ba-glottal_e-yaa-ne-daa-ne-du bee-te ya-raa-su waa-gaa glottal_a-la-we-stop ya-glottal_a-ga-le-ge-lo-te ke-fe-yaa-we ka-waa-gaa-we we-se-the ye-qa-ne-saa-le-stop",
+    "authored": true
+  },
+  "house.fee": {
+    "am": "የአገልግሎት ክፍያ",
+    "script": "ya-glottal_a-ga-le-ge-lo-te ke-fe-yaa",
+    "authored": true
+  },
+  "pay.payee": {
+    "am": "ይህንን ክፍያ የሚቀበለው የቴሌቢር ዲጂታል ቦርሳ፥ {0}",
+    "script": "ye-he-ne-ne ke-fe-yaa ya-mi-qa-ba-la-we ya-tee-lee-bi-re di-ji-taa-le bo-re-saa-colon {0}",
+    "authored": true
+  },
+  "nav.dash": {
+    "am": "ዳሽቦርድ",
+    "back": "Dashboard"
+  },
+  "dash.title": {
+    "am": "የነጋዴ ዳሽቦርድ",
+    "back": "Merchant dashboard"
+  },
+  "dash.subtitle": {
+    "am": "የእያንዳንዱ ቤት አሃዞች፡ ዋጋው፣ የአገልግሎት ክፍያ እና ሽልማቱ ተከፋፍሏል።",
+    "back": "The figures for each house: the price, the service charge and the prize are broken down."
+  },
+  "dash.forbidden": {
+    "am": "ይህ ገጽ ክፍያውን ለሚቀበለው የቴሌቢር ቦርሳ ብቻ ነው።",
+    "back": "This page is only for the Telebeer wallet that accepts the payment."
+  },
+  "dash.money": {
+    "am": "የዋጋ እና የሽልማት ክፍፍል",
+    "back": "Price and prize distribution"
+  },
+  "dash.live": {
+    "am": "አሁን ባለው ዙር ቁጥሮች",
+    "back": "Current round numbers"
+  },
+  "dash.paid": {
+    "am": "የተከፈለ",
+    "back": "Paid"
+  },
+  "dash.held": {
+    "am": "ተይዟል",
+    "script": "ta-ye-zwa-le",
+    "authored": true
+  },
+  "draws.place1": {
+    "am": "1ኛ",
+    "script": "1-nyaa",
+    "authored": true
+  },
+  "draws.place2": {
+    "am": "2ኛ",
+    "script": "2-nyaa",
+    "authored": true
+  },
+  "draws.place3": {
+    "am": "3ኛ",
+    "script": "3-nyaa",
+    "authored": true
+  },
+  "draws.prize": {
+    "am": "ሽልማት",
+    "script": "she-le-maa-te",
+    "authored": true
+  },
+  "dash.automation": {
+    "am": "በራሱ የሚሰራ",
+    "back": "It works by itself"
+  },
+  "dash.jobs": {
+    "am": "የበስተጀርባ ስራዎች",
+    "back": "Background works"
+  },
+  "dash.paymentMode": {
+    "am": "የክፍያ ሁነታ",
+    "back": "Payment mode"
+  },
+  "dash.gatewayCheck": {
+    "am": "የጌትዌይ ፍተሻ",
+    "back": "Gateway inspection"
+  },
+  "dash.activity": {
+    "am": "የእንቅስቃሴ ምዝግብ",
+    "script": "ya-glottal_e-ne-qe-se-qaa-see me-ze-ge-be",
+    "authored": true
+  },
+  "dash.noActivity": {
+    "am": "እስካሁን ምንም ነገር አልተፈጠረም።",
+    "back": "Nothing happened yet."
+  },
+  "dash.channels": {
+    "am": "የማንቂያ ቻናሎች",
+    "back": "Alarm channels"
+  },
+  "dash.delivered": {
+    "am": "ደረሰ",
+    "back": "arrived"
+  },
+  "dash.queued": {
+    "am": "ተሰልፏል",
+    "back": "Lined up"
+  },
+  "dash.errored": {
+    "am": "አልተሳካም።",
+    "back": "Failed."
+  },
+  "dash.notConfigured": {
+    "am": "አልተዋቀረም።",
+    "back": "Not configured."
+  },
+  "dash.lastError": {
+    "am": "የመጨረሻው ስህተት",
+    "back": "The last mistake"
+  },
+  "dash.running": {
+    "am": "በመሮጥ ላይ",
+    "script": "ba-ma-ro-the laa-ye",
+    "authored": true
+  },
+  "dash.stopped": {
+    "am": "ቆሟል",
+    "script": "qo-mwa-le",
+    "authored": true
+  },
+  "dash.autoNote": {
+    "am": "ክፍያው የሚረጋገጠው በቴሌቢር ማሳወቂያ እና በየዘጠና ሰከንድ በሚያደርገው ፍተሻ ነው። ቤት ሲሞላ ዕጣው በራሱ ይካሄዳል።",
+    "script": "ke-fe-yaa-we ya-mi-ra-gaa-ga-tha-we ba-tee-lee-bi-re maa-saa-wa-qi-yaa glottal_e-naa ba-ya-za-tha-naa sa-ka-ne-de ba-mi-yaa-da-re-ga-we fe-ta-shaa na-we-stop bee-te si-mo-laa pharyngeal_e-thaa-we ba-raa-su ye-kaa-hee-daa-le-stop",
+    "authored": true
+  },
+  "alert.paymentSubject": {
+    "am": "ክፍያ ተረጋግጧል - ቤት {0}",
+    "back": "Payment Confirmed - Home {0}"
+  },
+  "alert.payment": {
+    "am": "ቴሌቢር መክፈሉን አረጋግጧል። ቤት {0}፣ ዙር {1}፣ ቁጥር {2}፣ {3} ተከፍሏል።",
+    "back": "Telebir confirmed the payment. House {0}, round {1}, number {2}, {3} split."
+  },
+  "alert.drawSubject": {
+    "am": "የዕጣ ማውጫ ተጠናቀቀ - ቤት {0}",
+    "script": "ya-pharyngeal_e-thaa maa-we-chaa ta-tha-naa-qa-qa hyphen bee-te {0}",
+    "authored": true
+  },
+  "alert.draw": {
+    "am": "አንድ ቤት ተሞልቷል፣ የዕጣ ማውጫው በራሱ ተካሄዷል። ቤት {0}፣ ዙር {1}፣ ተሳታፊዎች {2}፣ የሽልማት ገንዳ {3}።",
+    "script": "glottal_a-ne-de bee-te ta-mo-le-twa-le-comma ya-pharyngeal_e-thaa maa-we-chaa-we ba-raa-su ta-kaa-hee-dwa-le-stop bee-te {0}-comma zu-re {1}-comma ta-saa-taa-fi-wo-ce {2}-comma ya-she-le-maa-te ga-ne-daa {3}-stop",
+    "authored": true
+  },
+  "alert.holdSubject": {
+    "am": "ቁጥሮች ተመልሰዋል - ቤት {0}",
+    "back": "Numbers returned - house {0}"
+  },
+  "alert.holdExpired": {
+    "am": "መያዣዎች ጊዜው አልፎበታል፣ እነዚህ ቁጥሮች ወደ ገንዳው ተመልሰዋል። ቤት {0}፥ {1}።",
+    "script": "ma-yaa-zhaa-wo-ce gi-zee-we glottal_a-le-fo-ba-taa-le-comma glottal_e-na-zi-he qu-the-ro-ce wa-da ga-ne-daa-we ta-ma-le-sa-waa-le-stop bee-te {0}-colon {1}-stop",
+    "authored": true
+  },
+  "alert.orphanSubject": {
+    "am": "ያለ ቁጥር ክፍያ - ቤት {0}",
+    "script": "yaa-la qu-the-re ke-fe-yaa hyphen bee-te {0}",
+    "authored": true
+  },
+  "alert.orphan": {
+    "am": "ቴሌቢር ቤት {0}፣ ቁጥር {1}፣ {2} ተረጋግጧል። ነገር ግን ቁጥሩ ጠፍቷል። ገንዘቡ በእጅ መመለስ አለበት። ትዕዛዝ {3}።",
+    "script": "tee-lee-bi-re bee-te {0}-comma qu-the-re {1}-comma {2} ta-ra-gaa-ge-thwa-le-stop na-ga-re ge-ne qu-the-ru tha-fe-twa-le-stop ga-ne-za-bu ba-glottal_e-je ma-ma-la-se glottal_a-la-ba-te-stop te-pharyngeal_e-zaa-ze {3}-stop",
+    "authored": true
+  },
+  "alert.gatewaySubject": {
+    "am": "የቴሌቢር ፍተሻ አልተሳካም።",
+    "script": "ya-tee-lee-bi-re fe-ta-shaa glottal_a-le-ta-saa-kaa-me-stop",
+    "authored": true
+  },
+  "alert.gateway": {
+    "am": "ስርዓቱ አሁንም በመጠባበቅ ላይ ስላሉት ክፍያዎች ቴሌቢርን መጠየቅ አልቻለም።",
+    "script": "se-re-pharyngeal_aa-tu glottal_a-hu-ne-me ba-ma-tha-baa-ba-qe laa-ye se-laa-lu-te ke-fe-yaa-wo-ce tee-lee-bi-re-ne ma-tha-ya-qe glottal_a-le-caa-la-me-stop",
+    "authored": true
+  },
+  "event.payment_settled": {
+    "am": "ክፍያ ተረጋግጧል",
+    "back": "Payment confirmed"
+  },
+  "event.draw_settled": {
+    "am": "የዕጣ ማውጫ ተጠናቀቀ",
+    "script": "ya-pharyngeal_e-thaa maa-we-chaa ta-tha-naa-qa-qa",
+    "authored": true
+  },
+  "event.hold_expired": {
+    "am": "ቁጥሮች ተመልሰዋል።",
+    "back": "Numbers are returned."
+  },
+  "event.orphan_payment": {
+    "am": "ያለ ቁጥር ክፍያ",
+    "back": "Payment without number"
+  },
+  "event.gateway_error": {
+    "am": "የቴሌቢር ፍተሻ ስህተት",
+    "script": "ya-tee-lee-bi-re fe-ta-shaa se-he-ta-te",
+    "authored": true
+  },
+  "dash.sweepJob": {
+    "am": "መያዣዎች እና ዕጣዎች",
+    "script": "ma-yaa-zhaa-wo-ce glottal_e-naa pharyngeal_e-thaa-wo-ce",
+    "authored": true
+  },
+  "dash.reconcileJob": {
+    "am": "የቴሌቢር ክፍያ ፍተሻ",
+    "script": "ya-tee-lee-bi-re ke-fe-yaa fe-ta-shaa",
+    "authored": true
+  },
+  "dash.dispatchJob": {
+    "am": "የተላኩ ማንቂያዎች",
+    "script": "ya-ta-laa-ku maa-ne-qi-yaa-wo-ce",
+    "authored": true
+  },
+  "dash.nextTry": {
+    "am": "እንደገና ይሞክሩ",
+    "back": "Try again"
+  },
+  "dash.noChannels": {
+    "am": "እስካሁን ምንም የማንቂያ ቻናል አልተዘጋጀም፣ ስለዚህ እያንዳንዱ ክስተት በዚህ ገጽ ላይ ብቻ ተዘርዝሯል።",
+    "back": "No alert channel has been set yet, so each event is listed on this page only."
+  },
+  "rules.fee": {
+    "am": "ተሳታፊው የቤቱን ዋጋ ብቻ ይከፍላል። የአገልግሎት ክፍያው ከዋጋው ውስጥ 25 በመቶ ይቀንሳል። የቀረው ለሽልማት ነው። ለምሳሌ በ20 ብር ቤት ውስጥ 5 ብር የአገልግሎት ክፍያ ነው፣ 15 ብር ለሽልማት ነው።",
+    "script": "ta-saa-taa-fi-we ya-bee-tu-ne waa-gaa be-caa ye-ka-fe-laa-le-stop ya-glottal_a-ga-le-ge-lo-te ke-fe-yaa-we ka-waa-gaa-we we-se-the 25 ba-ma-to ye-qa-ne-saa-le-stop ya-qa-ra-we la-she-le-maa-te na-we-stop la-me-saa-lee ba-20 be-re bee-te we-se-the 5 be-re ya-glottal_a-ga-le-ge-lo-te ke-fe-yaa na-we-comma 15 be-re la-she-le-maa-te na-we-stop",
+    "authored": true
+  },
+  "dash.forPrize": {
+    "am": "ለሽልማት የሚቀረው",
+    "script": "la-she-le-maa-te ya-mi-qa-ra-we",
+    "authored": true
+  },
+  "house.name": {
+    "am": "ቤት {0}",
+    "script": "bee-te {0}",
+    "authored": true
+  },
+  "dash.roster": {
+    "am": "ስልክ ቁጥሮች",
+    "script": "se-le-ke qu-the-ro-ce",
+    "authored": true
+  },
+  "admin.draw": {
+    "am": "ዕጣ ማውጫ",
+    "script": "pharyngeal_e-thaa maa-we-chaa",
+    "authored": true
+  },
+  "admin.notFull": {
+    "am": "ቤቱ ገና አልተሞላም።",
+    "script": "bee-tu ga-naa glottal_a-le-ta-mo-laa-me-stop",
+    "authored": true
+  },
+  "notice.payment": {
+    "am": "ቴሌቢር ክፍያዎን አረጋግጧል። ቤት {0}፣ ዙር {1}፣ ቁጥር {2} ለዚህ ዙር የእርስዎ ነው።",
+    "script": "tee-lee-bi-re ke-fe-yaa-wo-ne glottal_a-ra-gaa-ge-thwa-le-stop bee-te {0}-comma zu-re {1}-comma qu-the-re {2} la-zi-he zu-re ya-glottal_e-re-se-wo na-we-stop",
+    "authored": true
+  },
+  "notice.won": {
+    "am": "አሸነፉ። ቤት {0}፣ ዙር {1}፣ ቁጥር {2} {3} ደረጃ። ሽልማትዎ {4} ብር ነው።",
+    "script": "glottal_a-sha-na-fu-stop bee-te {0}-comma zu-re {1}-comma qu-the-re {2} {3} da-ra-jaa-stop she-le-maa-te-wo {4} be-re na-we-stop",
+    "authored": true
+  },
+  "notice.closed": {
+    "am": "ቤት {0} ተሞልቷል፣ የዕጣ ማውጫው በራሱ ተካሄዷል። አላሸነፉም። ውጤቱን ይመልከቱ።",
+    "script": "bee-te {0} ta-mo-le-twa-le-comma ya-pharyngeal_e-thaa maa-we-chaa-we ba-raa-su ta-kaa-hee-dwa-le-stop glottal_a-laa-sha-na-fu-me-stop we-thee-tu-ne ye-ma-le-ka-tu-stop",
+    "authored": true
+  },
+  "notice.linked": {
+    "am": "ቴሌግራም ተመዘገበ። ከእንግዲህ ዜናዎች ወደዚህ ቻት ይደርሳሉ።",
+    "script": "tee-lee-ge-raa-me ta-ma-za-ga-ba-stop ka-glottal_e-ne-ge-di-he zee-naa-wo-ce wa-da-zi-he caa-te ye-da-re-saa-lu-stop",
+    "authored": true
+  },
+  "mine.notices": {
+    "am": "ዜናዎች",
+    "script": "zee-naa-wo-ce",
+    "authored": true
+  },
+  "mine.noNotices": {
+    "am": "እስካሁን ምንም ዜና የለም።",
+    "script": "glottal_e-se-kaa-hu-ne me-ne-me zee-naa ya-la-me-stop",
+    "authored": true
+  },
+  "mine.unread": {
+    "am": "{0} አዲስ ዜና",
+    "script": "{0} glottal_a-di-se zee-naa",
+    "authored": true
+  },
+  "mine.markRead": {
+    "am": "ሁሉንም እንደተነበብ ምልክት ያድርጉ",
+    "script": "hu-lu-ne-me glottal_e-ne-da-ta-na-ba-be me-le-ke-te yaa-de-re-gu",
+    "authored": true
+  },
+  "mine.linkTelegram": {
+    "am": "ቴሌግራም ያያይሹ",
+    "script": "tee-lee-ge-raa-me yaa-yaa-ye-shu",
+    "authored": true
+  },
+  "mine.linkHint": {
+    "am": "በቴሌግራም ውስጥ ይክፈቱ።",
+    "script": "ba-tee-lee-ge-raa-me we-se-the ye-ke-fa-tu-stop",
+    "authored": true
+  },
+  "mine.linked": {
+    "am": "ቴሌግራም ተመዘገበ።",
+    "script": "tee-lee-ge-raa-me ta-ma-za-ga-ba-stop",
+    "authored": true
+  },
+  "mine.notConfigured": {
+    "am": "ለተሳታፊዎች ቴሌግራም ገና አልተዘጋጀም።",
+    "script": "la-ta-saa-taa-fi-wo-ce tee-lee-ge-raa-me ga-naa glottal_a-le-ta-za-gaa-ja-me-stop",
+    "authored": true
+  },
+  "mine.inAppOnly": {
+    "am": "ዜናው በዚህ ገጽ ላይ ይደርሳል።",
+    "script": "zee-naa-we ba-zi-he ga-tse laa-ye ye-da-re-saa-le-stop",
+    "authored": true
+  },
+  "dash.participantNotices": {
+    "am": "የተሳታፊ ማንቂያዎች",
+    "script": "ya-ta-saa-taa-fi maa-ne-qi-yaa-wo-ce",
+    "authored": true
+  },
+  "dash.linkedChats": {
+    "am": "ተመዘገበ ቻት",
+    "script": "ta-ma-za-ga-ba caa-te",
+    "authored": true
+  },
+  "dash.telegramJob": {
+    "am": "የቴሌግራም ማስተሳሰሪያ",
+    "script": "ya-tee-lee-ge-raa-me maa-se-ta-saa-sa-ri-yaa",
+    "authored": true
+  }
+}

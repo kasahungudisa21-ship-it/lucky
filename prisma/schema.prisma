@@ -1,0 +1,223 @@
+// ላኪ · digital house draw portal
+// Houses are data, not constants: each one carries the name participants see,
+// how many seats it holds and what one participant pays for a seat.
+// A participant pays that price and the service charge is cut out of it; both
+// parts are recorded per entry and payment so the prize pot can always be
+// rebuilt as (amountCents - feeCents) summed over the paid seats.
+// One filled house draws three prize places and pays the whole pot to them.
+// Money is stored as integer cents (1 ETB = 100 cents) so no float drift can
+// change what a participant paid or what a winner receives.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id        String   @id @default(cuid())
+  phone     String   @unique
+  pinHash   String
+  /// filled only once the participant has started the merchant bot with a link
+  /// code, so a chat id can never be claimed by typing it in blind
+  telegramChatId String? @unique
+  /// the one-time code /me issues while the chat id is still unknown
+  linkCode       String?
+  linkExpiresAt  DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  entries   Entry[]
+  notices   Notice[]
+}
+
+model House {
+  id            String   @id @default(cuid())
+  /// the name participants see, e.g. 20, 100A or 200
+  label         String   @unique
+  /// participant slots, 1..capacity
+  capacity      Int
+  /// what one participant pays for a seat, in cents
+  priceCents    Int
+  /// 1-based position in the house list
+  ordinal       Int      @unique
+  round         Int      @default(1)
+  isOpen        Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  seats         Seat[]
+  entries       Entry[]
+  draws         Draw[]
+
+  @@index([isOpen])
+}
+
+model Seat {
+  id        String    @id @default(cuid())
+  houseId   String
+  /// participant slots for the current round only; reset when a draw settles
+  number    Int
+  /// open | held | paid
+  status    String    @default("open")
+  heldUntil DateTime?
+  house     House     @relation(fields: [houseId], references: [id], onDelete: Cascade)
+
+  @@unique([houseId, number])
+  @@index([houseId, status])
+}
+
+model Entry {
+  id          String    @id @default(cuid())
+  houseId     String
+  round       Int
+  seatNumber  Int
+  accountId   String
+  /// what the participant is charged: the house price, service charge included
+  amountCents Int
+  /// service-charge part of amountCents — excluded from the prize pot
+  feeCents    Int      @default(0)
+  /// pending_payment | paid | won (a prize place) | lost | released
+  status      String    @default("pending_payment")
+  createdAt   DateTime  @default(now())
+  paidAt      DateTime?
+  /// set when a draw settled this seat (won | lost | released)
+  settledAt   DateTime?
+
+  house       House     @relation(fields: [houseId], references: [id], onDelete: Cascade)
+  account     Account   @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  payments    Payment[]
+  /// which prize place this entry took, if any: winner = 1st, second = 2nd, third = 3rd
+  wonDraw     Draw?     @relation("winner")
+  secondDraw  Draw?     @relation("second")
+  thirdDraw   Draw?     @relation("third")
+
+  /// the seat row's compare-and-set guarantees one live holder per number; this
+  /// index is not unique so a released or lost attempt stays as audit history and
+  /// the number can be handed to the next account in the same round
+  @@index([houseId, seatNumber, round])
+  @@index([houseId, round, status])
+  @@index([accountId, houseId])
+  @@index([accountId])
+}
+
+model Payment {
+  id             String   @id @default(cuid())
+  entryId        String
+  /// Telebirr merch_order_id, ^[A-Za-z0-9]+$ — echoed back by every gateway leg
+  merchOrderId   String   @unique
+  prepayId       String?
+  telebirrOrderId String?
+  amountCents    Int
+  /// service-charge part of amountCents, copied from the entry
+  feeCents       Int      @default(0)
+  currency       String   @default("ETB")
+  /// created | checkout_published | success | failed | cancelled | refunded
+  status         String   @default("created")
+  /// raw gateway notify / queryOrder payload kept as an audit trail
+  rawPayload     String?
+  verifiedAt     DateTime?
+  /// last time the reconciliation poll asked the gateway about this order, so a
+  /// long-unpaid order cannot starve the ones queued behind it
+  checkedAt      DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  entry          Entry    @relation(fields: [entryId], references: [id], onDelete: Cascade)
+
+  @@index([entryId])
+  @@index([status])
+  @@index([status, checkedAt])
+}
+
+model Draw {
+  id               String   @id @default(cuid())
+  houseId          String
+  round            Int
+  participantCount Int
+  /// sum of the paid house prices — service charges are excluded
+  potCents         Int
+  /// first place takes the rest of the pot, so first + second + third = potCents
+  winnerEntryId    String   @unique
+  winnerSeatNumber Int
+  firstCents       Int      @default(0)
+  /// second place = a quarter of the pot
+  secondEntryId    String?  @unique
+  secondSeatNumber Int?
+  secondCents      Int      @default(0)
+  /// third place = an eighth of the pot
+  thirdEntryId     String?  @unique
+  thirdSeatNumber  Int?
+  thirdCents       Int      @default(0)
+  /// random bytes used for the selection, kept for verification
+  entropy          String
+  /// sha256(entropy | ordered participant ids) — publishable commitment
+  commitment       String
+  /// pending | paid | refunded
+  payoutStatus     String   @default("pending")
+  createdAt        DateTime @default(now())
+
+  house            House    @relation(fields: [houseId], references: [id], onDelete: Cascade)
+  winner           Entry    @relation("winner", fields: [winnerEntryId], references: [id], onDelete: Restrict)
+  second           Entry?   @relation("second", fields: [secondEntryId], references: [id], onDelete: Restrict)
+  third            Entry?   @relation("third", fields: [thirdEntryId], references: [id], onDelete: Restrict)
+
+  @@unique([houseId, round])
+}
+
+/// One owner alert on one delivery channel. The dashboard feed is just the rows
+/// whose channel is "dashboard", so the activity log needs no second table.
+/// Text is rendered when the event happens: a later copy change cannot rewrite
+/// what the owner was actually told.
+model Alert {
+  id        String   @id @default(cuid())
+  /// payment_settled | draw_settled | hold_expired | orphan_payment | gateway_error
+  event     String
+  /// telegram | email | sms | dashboard
+  channel   String
+  subject   String?
+  body      String
+  /// pending | sending | sent | failed | skipped
+  status    String   @default("pending")
+  attempts  Int      @default(0)
+  lastError String?
+  /// when the dispatcher may next try this row
+  runAt     DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([channel, status, runAt])
+  @@index([event, createdAt])
+}
+
+/// One message for one participant, about their own number. The in-app feed
+/// reads these rows and "readAt" is its unread state; telegram and sms are the
+/// delivery legs of the same text, so a participant who never linked a chat
+/// simply has "none" here and nothing is ever queued for them.
+/// Text is rendered when the event happens, exactly like an owner alert: a later
+/// copy change cannot rewrite what the participant was told.
+model Notice {
+  id        String    @id @default(cuid())
+  accountId String
+  /// payment_settled | draw_won | draw_closed | telegram_linked
+  event     String
+  body      String
+  readAt    DateTime?
+  /// none | pending | sending | sent | failed
+  telegram  String    @default("none")
+  sms       String    @default("none")
+  tgAttempts  Int     @default(0)
+  smsAttempts Int     @default(0)
+  lastError String?
+  /// when the dispatcher may next try either leg
+  runAt     DateTime  @default(now())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  account Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  @@index([accountId, createdAt])
+  @@index([accountId, readAt])
+  @@index([telegram, runAt])
+  @@index([sms, runAt])
+}

@@ -1,0 +1,28 @@
+# docker compose up -d --build
+# The portal keeps its own timer, so no external cron is needed: as long as this
+# container runs, holds expire, houses draw, payments get confirmed against
+# Telebirr and alerts leave the queue.
+services:
+  portal:
+    build: .
+    image: lucky-portal
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      # the database lives on the mounted volume, not inside the image
+      DATABASE_URL: file:/data/lucky.db
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: 0.0.0.0
+    ports:
+      - "3210:3000"
+    volumes:
+      - ./data:/data
+    healthcheck:
+      # / is the one page that never needs a session
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s

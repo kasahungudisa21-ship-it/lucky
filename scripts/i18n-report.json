@@ -1,0 +1,1213 @@
+{
+  "brand.tagline": {
+    "en": "Lucky - digital house lottery draw portal",
+    "am": "ላኪ · የዕጣ ማውጫ ቤቶች ዲጂታል ፖርታል",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "brand.demo": {
+    "en": "Demo version, not a live service - Ethiopian birr - Telebirr",
+    "am": "ዴሞ ስሪት · ለሙከራ ብቻ · የኢትዮጵያ ብር · ቴሌቢር",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "nav.houses": {
+    "en": "Houses",
+    "am": "ቤቶች",
+    "source": "translated",
+    "back": "houses",
+    "score": 1
+  },
+  "nav.mine": {
+    "en": "My numbers",
+    "am": "የእኔ ቁጥሮች",
+    "source": "translated",
+    "back": "My numbers",
+    "score": 1
+  },
+  "nav.draws": {
+    "en": "Lottery draw results",
+    "am": "የዕጣ ማውጫ ውጤቶች",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "nav.signIn": {
+    "en": "Sign in",
+    "am": "ይግቡ",
+    "source": "translated",
+    "back": "Enter",
+    "score": 0
+  },
+  "nav.register": {
+    "en": "Create account",
+    "am": "መለያ ይፍጠሩ",
+    "source": "translated",
+    "back": "Create an account",
+    "score": 1
+  },
+  "nav.signOut": {
+    "en": "Sign out",
+    "am": "ዘግተህ ውጣ",
+    "source": "translated",
+    "back": "Close and exit",
+    "score": 0
+  },
+  "nav.openPortal": {
+    "en": "Go to the houses",
+    "am": "ወደ ቤቶቹ ይግቡ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "hero.title": {
+    "en": "Pick your number, pay with Telebirr, and the lottery draw happens inside that house.",
+    "am": "ቁጥርዎን ይምረጡ፣ በቴሌቢር ይከፍሉ፣ ዕጣው በዚያ ቤት ውስጥ ይካሄዳል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "hero.body": {
+    "en": "Every house has its own price. One house is 20 birr, one is 100 birr, one is 5000 birr. When a house is full, the lottery draw runs automatically between the participants of that house, and the whole prize pool goes to 3 winning numbers.",
+    "am": "በእያንዳንዱ ቤት የራሱ ዋጋ አለው። አንድ ቤት 20 ብር ነው። አንድ 100 ብር ነው። አንድ 5000 ብር ነው። ቤቱ ሲሞላ፣ ዕጣው በራስ-ሰር በዚያ ቤት ተሳታፊዎች መካከል ይካሄዳል። ሙሉው የሽልማት ገንዘብ ወደ 3 ቁጥሮች ይሄዳሉ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "hero.rule": {
+    "en": "The number you hold is public. Your name is never stored and never shown.",
+    "am": "የያዙት ቁጥር ይፋዊ ነው። ስምህ በጭራሽ አይከማችም እና በጭራሽ አይታይም።",
+    "source": "translated",
+    "back": "The number you hold is public. Your name will never be stored and will never be displayed.",
+    "score": 0.91
+  },
+  "stats.houses": {
+    "en": "Houses",
+    "am": "ቤቶች",
+    "source": "translated",
+    "back": "houses",
+    "score": 1
+  },
+  "stats.slots": {
+    "en": "Total participant slots",
+    "am": "ጠቅላላ ተሳታፊ ቦታዎች",
+    "source": "translated",
+    "back": "Total participating locations",
+    "score": 0.33
+  },
+  "stats.draw": {
+    "en": "Automatic lottery draw for each house",
+    "am": "ለእያንዳንዱ ቤት በራስ-ሰር ዕጣ ማውጫ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "auth.registerTitle": {
+    "en": "Create your account",
+    "am": "መለያዎን ይፍጠሩ",
+    "source": "translated",
+    "back": "Create your account",
+    "score": 1
+  },
+  "auth.signInTitle": {
+    "en": "Sign in to your account",
+    "am": "ወደ መለያዎ ይግቡ",
+    "source": "translated",
+    "back": "Log in to your account",
+    "score": 0.67
+  },
+  "auth.phone": {
+    "en": "Phone number",
+    "am": "ስልክ ቁጥር",
+    "source": "translated",
+    "back": "phone number",
+    "score": 1
+  },
+  "auth.phoneHint": {
+    "en": "The number your Telebirr wallet uses, for example 0912345678.",
+    "am": "የቴሌቢር ቦርሳህ የሚጠቀመው ቁጥር ለምሳሌ 0912345678።",
+    "source": "translated",
+    "back": "The number your Telebir wallet uses eg 0912345678.",
+    "score": 0.67
+  },
+  "auth.pin": {
+    "en": "Four to six digit PIN",
+    "am": "ከአራት እስከ ስድስት አሃዝ ፒን",
+    "source": "translated",
+    "back": "Four to six digit PIN",
+    "score": 1
+  },
+  "auth.pinHint": {
+    "en": "Chosen here only to protect this portal. It is not your Telebirr PIN.",
+    "am": "እዚህ የተመረጠው ይህን ፖርታል ለመጠበቅ ብቻ ነው። የቴሌቢር ፒንህ አይደለም።",
+    "source": "translated",
+    "back": "It is selected here only to protect this portal. Not your Telebir PIN.",
+    "score": 0.8
+  },
+  "auth.pinConfirm": {
+    "en": "Repeat the PIN",
+    "am": "ፒኑን እንደገና ያስገቡ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "auth.accept": {
+    "en": "I am at least eighteen years old and I accept the house rules.",
+    "am": "ቢያንስ የአስራ ስምንት አመት ልጅ ነኝ እና የቤቱን ህጎች እቀበላለሁ።",
+    "source": "translated",
+    "back": "I am at least eighteen years old and accept the house rules.",
+    "score": 1
+  },
+  "auth.submitRegister": {
+    "en": "Create account",
+    "am": "መለያ ይፍጠሩ",
+    "source": "translated",
+    "back": "Create an account",
+    "score": 1
+  },
+  "auth.submitSignIn": {
+    "en": "Sign in",
+    "am": "ይግቡ",
+    "source": "translated",
+    "back": "Enter",
+    "score": 0
+  },
+  "auth.haveAccount": {
+    "en": "Already have an account? Sign in",
+    "am": "መለያ አለህ? ይግቡ",
+    "source": "translated",
+    "back": "Do you have an account? Enter",
+    "score": 0.5
+  },
+  "auth.noAccount": {
+    "en": "No account yet? Create one",
+    "am": "እስካሁን መለያ የለም? አንድ ፍጠር",
+    "source": "translated",
+    "back": "Don't have an account yet? Create one",
+    "score": 1
+  },
+  "auth.privacyNote": {
+    "en": "Only the phone number and the PIN are stored, and the PIN is stored as a hash. Nothing else about you is asked.",
+    "am": "ስልክ ቁጥሩ እና ፒኑ ብቻ ተቀምጠዋል፣ እና ፒኑ እንደ ሃሽ ተቀምጧል። ስለእርስዎ ሌላ ምንም ነገር አይጠየቅም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "error.phone": {
+    "en": "Enter a valid Ethiopian phone number, starting with 09 or 07.",
+    "am": "ትክክለኛ የኢትዮጵያ ስልክ ቁጥር ከ09 ወይም 07 ጀምሮ ያስገቡ።",
+    "source": "translated",
+    "back": "Enter a valid Ethiopian phone number starting with 09 or 07.",
+    "score": 1
+  },
+  "error.pin": {
+    "en": "The PIN must be four to six digits.",
+    "am": "ፒኑ ከአራት እስከ ስድስት አሃዞች መሆን አለበት።",
+    "source": "translated",
+    "back": "The PIN must be between four and six digits.",
+    "score": 1
+  },
+  "error.pinMismatch": {
+    "en": "The two PINs are not the same.",
+    "am": "ሁለቱ ፒኖች አንድ አይነት አይደሉም።",
+    "source": "translated",
+    "back": "No two pins are identical.",
+    "score": 0.5
+  },
+  "error.accept": {
+    "en": "Confirm that you are at least eighteen and accept the house rules.",
+    "am": "ቢያንስ አስራ ስምንት መሆንዎን ያረጋግጡ እና የቤት ደንቦችን ይቀበሉ።",
+    "source": "translated",
+    "back": "Make sure you are at least eighteen and accept the house rules.",
+    "score": 0.82
+  },
+  "error.login": {
+    "en": "The phone number or the PIN is wrong.",
+    "am": "ስልክ ቁጥሩ ወይም ፒኑ የተሳሳተ ነው።",
+    "source": "translated",
+    "back": "The phone number or PIN is incorrect.",
+    "score": 0.8
+  },
+  "error.exists": {
+    "en": "This phone number already has an account. Sign in instead.",
+    "am": "ይህ ስልክ ቁጥር አስቀድሞ መለያ አለው። በምትኩ ይግቡ።",
+    "source": "translated",
+    "back": "This phone number already has an account. Sign in instead.",
+    "score": 1
+  },
+  "error.signIn": {
+    "en": "Please sign in first.",
+    "am": "እባክዎ መጀመሪያ ይግቡ።",
+    "source": "translated",
+    "back": "Please login first.",
+    "score": 0.67
+  },
+  "error.numberTaken": {
+    "en": "That number was taken a moment ago. Pick another free number.",
+    "am": "ይህ ቁጥር የተወሰደው ከአፍታ በፊት ነው። ሌላ ነፃ ቁጥር ይምረጡ።",
+    "source": "translated",
+    "back": "This number was taken a moment ago. Choose another free number.",
+    "score": 0.78
+  },
+  "error.alreadyHolds": {
+    "en": "You already hold a number in this house. Release it before choosing another.",
+    "am": "አስቀድመው በዚህ ቤት ውስጥ ቁጥር ይይዛሉ። ሌላ ከመምረጥዎ በፊት ይልቀቁት።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "error.houseClosed": {
+    "en": "This house is closed for the current round.",
+    "am": "ይህ ቤት ለአሁኑ ዙር ዝግ ነው።",
+    "source": "translated",
+    "back": "This house is closed for the current round.",
+    "score": 1
+  },
+  "houses.title": {
+    "en": "The houses and their prices",
+    "am": "ቤቶች እና ዋጋቸው",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "houses.subtitle": {
+    "en": "Every house has its own price. The service charge is cut out of that price.",
+    "am": "በእያንዳንዱ ቤት የራሱ ዋጋ አለው። የአገልግሎት ክፍያው ከዋጋው ውስጥ ይቀንሳል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "houses.col.house": {
+    "en": "House",
+    "am": "ቤት",
+    "source": "translated",
+    "back": "at home",
+    "score": 0
+  },
+  "houses.col.size": {
+    "en": "Participants",
+    "am": "ተሳታፊዎች",
+    "source": "translated",
+    "back": "Participants",
+    "score": 1
+  },
+  "houses.col.price": {
+    "en": "Price each",
+    "am": "የነጠላ ዋጋ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "houses.col.pot": {
+    "en": "Prize pool",
+    "am": "የሽልማት ገንዘብ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "houses.col.taken": {
+    "en": "Taken",
+    "am": "የተወሰደ",
+    "source": "translated",
+    "back": "Taken",
+    "score": 1
+  },
+  "houses.col.free": {
+    "en": "Available",
+    "am": "ነፃ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "houses.choose": {
+    "en": "Choose a number",
+    "am": "ቁጥር ይምረጡ",
+    "source": "translated",
+    "back": "Choose a number",
+    "score": 1
+  },
+  "houses.round": {
+    "en": "Round",
+    "am": "ዙር",
+    "source": "translated",
+    "back": "Round",
+    "score": 1
+  },
+  "houses.completed": {
+    "en": "This house is complete. Its lottery draw has already been done.",
+    "am": "ቤቱ ተሞልቷል፣ ዕጣው ቀድሞ ተካሄዷል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "house.title": {
+    "en": "House of {0} participants",
+    "am": "{0} ተሳታፊ ያለው ቤት",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "house.name": {
+    "en": "House {0}",
+    "am": "ቤት {0}",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "house.pickTitle": {
+    "en": "Pick any free number",
+    "am": "ማንኛውንም ነፃ ቁጥር ይምረጡ",
+    "source": "translated",
+    "back": "Choose any free number",
+    "score": 0.75
+  },
+  "house.pickHint": {
+    "en": "A number you pick is held for fifteen minutes while you pay, and released if the payment does not arrive.",
+    "am": "የመረጡት ቁጥር ለአስራ አምስት ደቂቃ ተይዟል፣ ክፍያው ካልደረሰ ግን ይለቀቃል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "house.selected": {
+    "en": "You picked number {0}.",
+    "am": "ቁጥር {0} መርጠዋል።",
+    "source": "translated",
+    "back": "You have selected the number {0}.",
+    "score": 0.67
+  },
+  "house.priceRule": {
+    "en": "One participant pays {0} birr here.",
+    "am": "አንድ ተሳታፊ እዚህ {0} ብር ይከፍላል።",
+    "source": "translated",
+    "back": "A participant here pays {0} Rs.",
+    "score": 0.6
+  },
+  "house.fee": {
+    "en": "Service charge",
+    "am": "የአገልግሎት ክፍያ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "house.pay": {
+    "en": "Pay {0} birr with Telebirr",
+    "am": "በቴሌቢር {0} ብር ይከፍሉ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "house.release": {
+    "en": "Release this number",
+    "am": "ይህን ቁጥር ይልቀቁ",
+    "source": "translated",
+    "back": "Release this number",
+    "score": 1
+  },
+  "house.mineLabel": {
+    "en": "yours",
+    "am": "የአንተ",
+    "source": "translated",
+    "back": "yours",
+    "score": 1
+  },
+  "status.free": {
+    "en": "available",
+    "am": "ነፃ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "status.held": {
+    "en": "on hold",
+    "am": "ተይዟል",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "status.paid": {
+    "en": "paid",
+    "am": "ተከፈለ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "status.failed": {
+    "en": "payment not confirmed",
+    "am": "ክፍያ አልተረጋገጠም",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.title": {
+    "en": "Telebirr payment",
+    "am": "የቴሌቢር ክፍያ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.wallet": {
+    "en": "Your Telebirr digital wallet is charged {0} birr for number {1}.",
+    "am": "ለቁጥር {1} የቴሌቢር ዲጂታል ቦርሳህ {0} ብር ተከፍሏል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.payee": {
+    "en": "Telebirr wallet that receives this payment: {0}",
+    "am": "ይህንን ክፍያ የሚቀበለው የቴሌቢር ዲጂታል ቦርሳ፥ {0}",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.open": {
+    "en": "Open Telebirr to pay",
+    "am": "ለመክፈል ቴሌቢርን ይክፍቱ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.waiting": {
+    "en": "Waiting for the confirmation from Telebirr.",
+    "am": "ማረጋገጫውን ከቴሌቢር በመጠበቅ ላይ።",
+    "source": "translated",
+    "back": "Awaiting confirmation from Telebir.",
+    "score": 0.33
+  },
+  "pay.done": {
+    "en": "Payment confirmed. Number {0} is yours for this round.",
+    "am": "ክፍያ ተረጋግጧል። ቁጥር {0} ለዚህ ዙር ያንተ ነው።",
+    "source": "translated",
+    "back": "Payment confirmed. The number {0} is yours for this round.",
+    "score": 1
+  },
+  "pay.reopen": {
+    "en": "Open the payment page again",
+    "am": "የክፍያ ገጹን እንደገና ይክፍቱ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.simulated": {
+    "en": "Test mode: this is a simulation. No money moved and no Telebirr order was created.",
+    "am": "ሙከራ ሁነታ፥ ይህ ውሸብ ነው። ምንም ገንዘብ አልተመዘገበም፣ የቴሌቢር ትዕዛዝም የለም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.simulateButton": {
+    "en": "Mark this order as paid",
+    "am": "ይህን ትዕዛዝ እንደተከፈለ ይመልክቱ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.notConfigured": {
+    "en": "The Telebirr merchant account details are not configured yet, so a real payment cannot be started.",
+    "am": "የቴሌቢር ሻጭ መለያ ገና አልተሞላም፣ ስለዚህ በእውነት ክፍያ ማስጀመር አይቻልም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.missingVariables": {
+    "en": "Missing settings: {0}",
+    "am": "የጎደሉ ቅንብሮች፥ {0}",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.stillPending": {
+    "en": "The payment is still pending. Finish it in the Telebirr app, then reload this page.",
+    "am": "ክፍያው ገና አልተጠናቀቀም። በቴሌቢር መተግበሪያ ይጨርሱ፣ ከዚያ ይህን ገጽ ዳግም ይጫኑ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "pay.failed": {
+    "en": "The payment could not be confirmed.",
+    "am": "ክፍያው ሊረጋገጥ አልተቻለም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.title": {
+    "en": "My numbers",
+    "am": "የእኔ ቁጥሮች",
+    "source": "translated",
+    "back": "My numbers",
+    "score": 1
+  },
+  "mine.empty": {
+    "en": "You do not hold a number yet.",
+    "am": "እስካሁን ቁጥር አልያዝክም።",
+    "source": "translated",
+    "back": "You don't have a number yet.",
+    "score": 0.6
+  },
+  "mine.pending": {
+    "en": "Waiting for payment",
+    "am": "ክፍያ በመጠበቅ ላይ",
+    "source": "translated",
+    "back": "Awaiting payment",
+    "score": 0.33
+  },
+  "mine.paid": {
+    "en": "Paid and entered in the lottery draw",
+    "am": "ተከፈለና በዕጣ ማውጫው ውስጥ ገብቷል",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.lost": {
+    "en": "Did not win round {0}",
+    "am": "ዙር {0} አላሸነፉም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.released": {
+    "en": "Released",
+    "am": "ተለቋል",
+    "source": "translated",
+    "back": "Released",
+    "score": 1
+  },
+  "mine.payNow": {
+    "en": "Pay now",
+    "am": "አሁን ይከፍሉ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.amount": {
+    "en": "Paid {0} birr",
+    "am": "{0} ብር ተከፍሏል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "draws.title": {
+    "en": "Lottery draw results",
+    "am": "የዕጣ ማውጫ ውጤቶች",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "draws.subtitle": {
+    "en": "A lottery draw runs by itself as soon as a house is full, using only the participants of that house.",
+    "am": "ቤቱ ሲሞላ ዕጣ ማውጫው በራስ-ሰር ይካሄዳል፣ የዚያ ቤት ተሳታፊዎች ብቻ ናቸው።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "draws.place1": {
+    "en": "1st",
+    "am": "1ኛ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "draws.place2": {
+    "en": "2nd",
+    "am": "2ኛ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "draws.place3": {
+    "en": "3rd",
+    "am": "3ኛ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "draws.prize": {
+    "en": "Prize",
+    "am": "ሽልማት",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "draws.participants": {
+    "en": "Participants",
+    "am": "ተሳታፊዎች",
+    "source": "translated",
+    "back": "Participants",
+    "score": 1
+  },
+  "draws.pot": {
+    "en": "Prize pool",
+    "am": "የሽልማት ገንዘብ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "draws.empty": {
+    "en": "No lottery draw has finished yet.",
+    "am": "እስካሁን ምንም ዕጣ ማውጫ አልተጠናቀቀም",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "draws.seedNote": {
+    "en": "The seed and the verification hash are published. Anyone can re-check that the winning number came out of these participants.",
+    "am": "ዘሩና የማረጋገጫ ሃሹ ለሁሉ ግልጽ ነው። ማንኛውም አሸናፊው ቁጥር ከእነዚህ ተሳታፊዎች መካከል እንዴት እንደወጣ ማረጋገጥ ይችላል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "draws.payoutPending": {
+    "en": "The pot is recorded and waits for payout.",
+    "am": "ገንዘቡ ተመዘገበ፣ ለመፍታት ይጠብቃል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "rules.title": {
+    "en": "House rules",
+    "am": "የቤት ደንቦች",
+    "source": "translated",
+    "back": "House rules",
+    "score": 1
+  },
+  "rules.price": {
+    "en": "Each house has its own price. The price is not equal to the number of participants.",
+    "am": "በእያንዳንዱ ቤት የራሱ ዋጋ አለው። ዋጋው ከተሳታፊዎች ብዛት ጋር እኩል አይደለም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "rules.pick": {
+    "en": "You choose the number yourself. Free numbers are open to everyone in the house.",
+    "am": "ቁጥሩን እራስዎ ይመርጣሉ። ነፃ ቁጥሮች በቤቱ ውስጥ ላሉ ሰዎች ሁሉ ክፍት ናቸው።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "rules.pay": {
+    "en": "You pay through your Telebirr digital wallet. A number becomes yours only after Telebirr confirms the payment.",
+    "am": "በቴሌቢር ዲጂታል መለያዎ ክፍያዎን ይከፍላሉ። ቴሌቢር ክፍያዎን ሲያረጋገጥ ብቻ ቁጥሩ የእርስዎ ይሆናል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "rules.fee": {
+    "en": "Each participant pays the house price and nothing extra. The service charge is cut out of that money: it is twenty five percent of the payment. What is left goes to the prize pool. In a twenty birr house five birr is the service charge and fifteen birr goes to the prizes.",
+    "am": "ተሳታፊው የቤቱን ዋጋ ብቻ ይከፍላል። የአገልግሎት ክፍያው ከዋጋው ውስጥ 25 በመቶ ይቀንሳል። የቀረው ለሽልማት ነው። ለምሳሌ በ20 ብር ቤት ውስጥ 5 ብር የአገልግሎት ክፍያ ነው፣ 15 ብር ለሽልማት ነው።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "rules.draw": {
+    "en": "When the house is full the lottery draw runs automatically between its participants. Three numbers take the whole prize pool: 1st, 2nd and 3rd.",
+    "am": "ቤቱ ሲሞላ ዕጣ ማውጫው በራስ-ሰር በቤቱ ተሳታፊዎች መካከል ይካሄዳል። 3 ቁጥሮች ሙሉውን የሽልማት ገንዘብ ይወሰዳሉ፥ 1ኛ፣ 2ኛ፣ 3ኛ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "rules.privacy": {
+    "en": "Everyone sees numbers and prices. Nobody sees names or phone numbers.",
+    "am": "ሁሉም ሰው ቁጥሮችን እና ዋጋዎችን ይመለከታል። ማንም ሰው ስሞችን ወይም ስልክ ቁጥሮችን አያይም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "common.birr": {
+    "en": "birr",
+    "am": "ብር",
+    "source": "translated",
+    "back": "Rs",
+    "score": 0
+  },
+  "common.amount": {
+    "en": "Amount paid",
+    "am": "የተከፈለው መጠን",
+    "source": "translated",
+    "back": "Amount paid",
+    "score": 1
+  },
+  "common.status": {
+    "en": "Status",
+    "am": "ሁኔታ",
+    "source": "translated",
+    "back": "situation",
+    "score": 0
+  },
+  "common.back": {
+    "en": "Back",
+    "am": "ተመለስ",
+    "source": "translated",
+    "back": "come back",
+    "score": 1
+  },
+  "common.number": {
+    "en": "Number",
+    "am": "ቁጥር",
+    "source": "translated",
+    "back": "No",
+    "score": 0
+  },
+  "common.round": {
+    "en": "Round",
+    "am": "ዙር",
+    "source": "translated",
+    "back": "Round",
+    "score": 1
+  },
+  "common.reload": {
+    "en": "Reload",
+    "am": "ዳግም ጫን",
+    "source": "translated",
+    "back": "Reinstall",
+    "score": 0
+  },
+  "footer.note": {
+    "en": "Lucky is a demo of a lottery draw flow. Running it with real money needs a Telebirr merchant contract and a licence for the lottery draw itself.",
+    "am": "ላኪ የዕጣ ማውጫ ሂደት ዴሞ ነው። በእውነት ገንዘብ ለማካሄድ የቴሌቢር ሻጭ ውልና የዕጣ ማውጫ ፈቃድ ያስፈልጋል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "admin.title": {
+    "en": "Scheduled lottery draw sweep",
+    "am": "የተሞሉ ቤቶች ዕጣ ማውጫ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "admin.ran": {
+    "en": "Finished the lottery draw for {0} houses.",
+    "am": "ለ {0} ቤቶች ዕጣ ማውጫ ተጠናቀቀ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "admin.none": {
+    "en": "No house is complete yet.",
+    "am": "እስካሁን የተጠናቀቀ ቤት የለም።",
+    "source": "translated",
+    "back": "No house is finished yet.",
+    "score": 0.67
+  },
+  "admin.draw": {
+    "en": "Draw the lot",
+    "am": "ዕጣ ማውጫ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "admin.notFull": {
+    "en": "The house is not full yet.",
+    "am": "ቤቱ ገና አልተሞላም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "nav.dash": {
+    "en": "Dashboard",
+    "am": "ዳሽቦርድ",
+    "source": "translated",
+    "back": "Dashboard",
+    "score": 1
+  },
+  "dash.title": {
+    "en": "Merchant dashboard",
+    "am": "የነጋዴ ዳሽቦርድ",
+    "source": "translated",
+    "back": "Merchant dashboard",
+    "score": 1
+  },
+  "dash.subtitle": {
+    "en": "The figures of every house: the price, the service charge and the prize split.",
+    "am": "የእያንዳንዱ ቤት አሃዞች፡ ዋጋው፣ የአገልግሎት ክፍያ እና ሽልማቱ ተከፋፍሏል።",
+    "source": "translated",
+    "back": "The figures for each house: the price, the service charge and the prize are broken down.",
+    "score": 0.8
+  },
+  "dash.forbidden": {
+    "en": "This page is only for the Telebirr wallet that receives the payments.",
+    "am": "ይህ ገጽ ክፍያውን ለሚቀበለው የቴሌቢር ቦርሳ ብቻ ነው።",
+    "source": "translated",
+    "back": "This page is only for the Telebeer wallet that accepts the payment.",
+    "score": 0.7
+  },
+  "dash.money": {
+    "en": "Price and prize split",
+    "am": "የዋጋ እና የሽልማት ክፍፍል",
+    "source": "translated",
+    "back": "Price and prize distribution",
+    "score": 0.75
+  },
+  "dash.forPrize": {
+    "en": "Left for the prizes",
+    "am": "ለሽልማት የሚቀረው",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.live": {
+    "en": "Numbers in the current round",
+    "am": "አሁን ባለው ዙር ቁጥሮች",
+    "source": "translated",
+    "back": "Current round numbers",
+    "score": 0.75
+  },
+  "dash.roster": {
+    "en": "Phone numbers",
+    "am": "ስልክ ቁጥሮች",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.paid": {
+    "en": "Paid",
+    "am": "የተከፈለ",
+    "source": "translated",
+    "back": "Paid",
+    "score": 1
+  },
+  "dash.held": {
+    "en": "Held",
+    "am": "ተይዟል",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.automation": {
+    "en": "What runs by itself",
+    "am": "በራሱ የሚሰራ",
+    "source": "translated",
+    "back": "It works by itself",
+    "score": 0.33
+  },
+  "dash.sweepJob": {
+    "en": "Holds and draws",
+    "am": "መያዣዎች እና ዕጣዎች",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.reconcileJob": {
+    "en": "Telebirr payment check",
+    "am": "የቴሌቢር ክፍያ ፍተሻ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.dispatchJob": {
+    "en": "Alerts sent",
+    "am": "የተላኩ ማንቂያዎች",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.paymentMode": {
+    "en": "Payment mode",
+    "am": "የክፍያ ሁነታ",
+    "source": "translated",
+    "back": "Payment mode",
+    "score": 1
+  },
+  "dash.activity": {
+    "en": "Activity log",
+    "am": "የእንቅስቃሴ ምዝግብ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.noActivity": {
+    "en": "Nothing has happened yet.",
+    "am": "እስካሁን ምንም ነገር አልተፈጠረም።",
+    "source": "translated",
+    "back": "Nothing happened yet.",
+    "score": 0.75
+  },
+  "dash.channels": {
+    "en": "Alert channels",
+    "am": "የማንቂያ ቻናሎች",
+    "source": "translated",
+    "back": "Alarm channels",
+    "score": 0.5
+  },
+  "dash.delivered": {
+    "en": "Delivered",
+    "am": "ደረሰ",
+    "source": "translated",
+    "back": "arrived",
+    "score": 0
+  },
+  "dash.queued": {
+    "en": "Queued",
+    "am": "ተሰልፏል",
+    "source": "translated",
+    "back": "Lined up",
+    "score": 0
+  },
+  "dash.errored": {
+    "en": "Failed",
+    "am": "አልተሳካም።",
+    "source": "translated",
+    "back": "Failed.",
+    "score": 1
+  },
+  "dash.notConfigured": {
+    "en": "Not configured",
+    "am": "አልተዋቀረም።",
+    "source": "translated",
+    "back": "Not configured.",
+    "score": 1
+  },
+  "dash.noChannels": {
+    "en": "No alert channel is set up yet, so every event is only listed on this page.",
+    "am": "እስካሁን ምንም የማንቂያ ቻናል አልተዘጋጀም፣ ስለዚህ እያንዳንዱ ክስተት በዚህ ገጽ ላይ ብቻ ተዘርዝሯል።",
+    "source": "translated",
+    "back": "No alert channel has been set yet, so each event is listed on this page only.",
+    "score": 0.9
+  },
+  "dash.lastError": {
+    "en": "Last error",
+    "am": "የመጨረሻው ስህተት",
+    "source": "translated",
+    "back": "The last mistake",
+    "score": 0.5
+  },
+  "dash.running": {
+    "en": "running",
+    "am": "በመሮጥ ላይ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.stopped": {
+    "en": "stopped",
+    "am": "ቆሟል",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.autoNote": {
+    "en": "The portal confirms a payment on its own: by the Telebirr notification call and by a gateway check every ninety seconds. When a house is full its draw runs on its own.",
+    "am": "ክፍያው የሚረጋገጠው በቴሌቢር ማሳወቂያ እና በየዘጠና ሰከንድ በሚያደርገው ፍተሻ ነው። ቤት ሲሞላ ዕጣው በራሱ ይካሄዳል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "alert.paymentSubject": {
+    "en": "Payment confirmed - house {0}",
+    "am": "ክፍያ ተረጋግጧል - ቤት {0}",
+    "source": "translated",
+    "back": "Payment Confirmed - Home {0}",
+    "score": 0.67
+  },
+  "alert.payment": {
+    "en": "Telebirr confirmed a payment. House {0}, round {1}, number {2}, {3} paid.",
+    "am": "ቴሌቢር መክፈሉን አረጋግጧል። ቤት {0}፣ ዙር {1}፣ ቁጥር {2}፣ {3} ተከፍሏል።",
+    "source": "translated",
+    "back": "Telebir confirmed the payment. House {0}, round {1}, number {2}, {3} split.",
+    "score": 0.71
+  },
+  "alert.drawSubject": {
+    "en": "Draw finished - house {0}",
+    "am": "የዕጣ ማውጫ ተጠናቀቀ - ቤት {0}",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "alert.draw": {
+    "en": "One house filled, so its draw ran by itself. House {0}, round {1}, {2} participants, prize pool {3}.",
+    "am": "አንድ ቤት ተሞልቷል፣ የዕጣ ማውጫው በራሱ ተካሄዷል። ቤት {0}፣ ዙር {1}፣ ተሳታፊዎች {2}፣ የሽልማት ገንዳ {3}።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "alert.holdSubject": {
+    "en": "Numbers returned - house {0}",
+    "am": "ቁጥሮች ተመልሰዋል - ቤት {0}",
+    "source": "translated",
+    "back": "Numbers returned - house {0}",
+    "score": 1
+  },
+  "alert.holdExpired": {
+    "en": "Holds expired and these numbers went back to the pool. House {0}: {1}.",
+    "am": "መያዣዎች ጊዜው አልፎበታል፣ እነዚህ ቁጥሮች ወደ ገንዳው ተመልሰዋል። ቤት {0}፥ {1}።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "alert.orphanSubject": {
+    "en": "Payment without a number - house {0}",
+    "am": "ያለ ቁጥር ክፍያ - ቤት {0}",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "alert.orphan": {
+    "en": "Telebirr confirmed {2} for house {0}, number {1}, but that number was already gone. The money must be handed back by hand. Order {3}.",
+    "am": "ቴሌቢር ቤት {0}፣ ቁጥር {1}፣ {2} ተረጋግጧል። ነገር ግን ቁጥሩ ጠፍቷል። ገንዘቡ በእጅ መመለስ አለበት። ትዕዛዝ {3}።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "alert.gatewaySubject": {
+    "en": "Telebirr check failed",
+    "am": "የቴሌቢር ፍተሻ አልተሳካም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "alert.gateway": {
+    "en": "The portal could not ask Telebirr about the payments that are still pending.",
+    "am": "ስርዓቱ አሁንም በመጠባበቅ ላይ ስላሉት ክፍያዎች ቴሌቢርን መጠየቅ አልቻለም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "event.payment_settled": {
+    "en": "Payment confirmed",
+    "am": "ክፍያ ተረጋግጧል",
+    "source": "translated",
+    "back": "Payment confirmed",
+    "score": 1
+  },
+  "event.draw_settled": {
+    "en": "Draw finished",
+    "am": "የዕጣ ማውጫ ተጠናቀቀ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "event.hold_expired": {
+    "en": "Numbers returned",
+    "am": "ቁጥሮች ተመልሰዋል።",
+    "source": "translated",
+    "back": "Numbers are returned.",
+    "score": 1
+  },
+  "event.orphan_payment": {
+    "en": "Payment without a number",
+    "am": "ያለ ቁጥር ክፍያ",
+    "source": "translated",
+    "back": "Payment without number",
+    "score": 1
+  },
+  "event.gateway_error": {
+    "en": "Telebirr check failed",
+    "am": "የቴሌቢር ፍተሻ ስህተት",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "notice.payment": {
+    "en": "Telebirr confirmed your payment. House {0}, round {1}, number {2} is yours for this round.",
+    "am": "ቴሌቢር ክፍያዎን አረጋግጧል። ቤት {0}፣ ዙር {1}፣ ቁጥር {2} ለዚህ ዙር የእርስዎ ነው።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "notice.won": {
+    "en": "You won. House {0}, round {1}, number {2} took place {3}. Your prize is {4} birr.",
+    "am": "አሸነፉ። ቤት {0}፣ ዙር {1}፣ ቁጥር {2} {3} ደረጃ። ሽልማትዎ {4} ብር ነው።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "notice.closed": {
+    "en": "House {0} filled and its draw ran by itself. You did not win. See the result.",
+    "am": "ቤት {0} ተሞልቷል፣ የዕጣ ማውጫው በራሱ ተካሄዷል። አላሸነፉም። ውጤቱን ይመልከቱ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "notice.linked": {
+    "en": "Telegram is registered. From now on your notices arrive in this chat.",
+    "am": "ቴሌግራም ተመዘገበ። ከእንግዲህ ዜናዎች ወደዚህ ቻት ይደርሳሉ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.notices": {
+    "en": "Notices",
+    "am": "ዜናዎች",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.noNotices": {
+    "en": "There are no notices yet.",
+    "am": "እስካሁን ምንም ዜና የለም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.unread": {
+    "en": "{0} new notices",
+    "am": "{0} አዲስ ዜና",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.markRead": {
+    "en": "Mark all as read",
+    "am": "ሁሉንም እንደተነበብ ምልክት ያድርጉ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.linkTelegram": {
+    "en": "Link Telegram",
+    "am": "ቴሌግራም ያያይሹ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.linkHint": {
+    "en": "Open it inside Telegram.",
+    "am": "በቴሌግራም ውስጥ ይክፈቱ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.linked": {
+    "en": "Telegram is registered.",
+    "am": "ቴሌግራም ተመዘገበ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.notConfigured": {
+    "en": "Telegram for participants is not configured yet.",
+    "am": "ለተሳታፊዎች ቴሌግራም ገና አልተዘጋጀም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "mine.inAppOnly": {
+    "en": "Notices arrive on this page.",
+    "am": "ዜናው በዚህ ገጽ ላይ ይደርሳል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.participantNotices": {
+    "en": "Participant notices",
+    "am": "የተሳታፊ ማንቂያዎች",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.linkedChats": {
+    "en": "Registered chats",
+    "am": "ተመዘገበ ቻት",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "dash.telegramJob": {
+    "en": "Telegram links",
+    "am": "የቴሌግራም ማስተሳሰሪያ",
+    "source": "authored",
+    "back": "",
+    "score": null
+  }
+}

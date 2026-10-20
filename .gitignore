@@ -1,0 +1,13 @@
+node_modules
+.next
+# Prisma resolves the relative sqlite path against prisma/, so the live file is
+# prisma/prisma/dev.db; these patterns match it wherever it lands.
+# none of these may ever be committed: they carry every wallet number.
+dev.db
+dev.db-journal
+*.bak-*
+.env
+*.tsbuildinfo
+.DS_Store
+data
+docker-compose.override.yml
