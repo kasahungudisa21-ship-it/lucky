@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/db";
 import { channelStates, participantSms, participantTelegram, type AlertChannelName } from "@/lib/alerts/config";
 import { fullHousePotCents, priceBreakdown } from "@/lib/pricing";
+import { balanceOf, walletOfAccount } from "@/lib/services/wallet";
 
 export type HouseSummary = {
   id: string;
@@ -59,6 +60,7 @@ export async function houseSummaries(): Promise<HouseSummary[]> {
 }
 
 export type SeatView = { number: number; status: "free" | "held" | "paid" | "mine" };
+export type MySeat = { entryId: string; seatNumber: number; status: string; expiresAt: string | null };
 
 export async function houseDetail(houseId: string, accountId: string | null) {
   const house = await prisma.house.findUnique({
@@ -68,13 +70,20 @@ export async function houseDetail(houseId: string, accountId: string | null) {
   if (!house) return null;
 
   const mine = accountId
-    ? await prisma.entry.findFirst({
+    ? await prisma.entry.findMany({
         where: { accountId, houseId, status: { in: ["pending_payment", "paid"] } },
+        orderBy: { seatNumber: "asc" },
+        select: { id: true, seatNumber: true, status: true },
       })
-    : null;
+    : [];
+  const mineNumbers = new Set(mine.map((entry) => entry.seatNumber));
+  // an unpaid pick is only kept until the hold deadline, the board counts it down
+  const holdByNumber = new Map(
+    house.seats.filter((seat) => seat.status === "held").map((seat) => [seat.number, seat.heldUntil]),
+  );
 
   const seats: SeatView[] = house.seats.map((seat) => {
-    if (mine && mine.seatNumber === seat.number) return { number: seat.number, status: "mine" };
+    if (mineNumbers.has(seat.number)) return { number: seat.number, status: "mine" };
     if (seat.status === "paid") return { number: seat.number, status: "paid" };
     if (seat.status === "held") return { number: seat.number, status: "held" };
     return { number: seat.number, status: "free" };
@@ -91,7 +100,12 @@ export async function houseDetail(houseId: string, accountId: string | null) {
       isOpen: house.isOpen,
     },
     seats,
-    mine,
+    mine: mine.map<MySeat>((entry) => ({
+      entryId: entry.id,
+      seatNumber: entry.seatNumber,
+      status: entry.status,
+      expiresAt: holdByNumber.get(entry.seatNumber)?.toISOString() ?? null,
+    })),
   };
 }
 
@@ -130,6 +144,56 @@ export async function myEntries(accountId: string): Promise<MyEntry[]> {
           ? { place: 3, round: thirdDraw.round, cents: thirdDraw.thirdCents }
           : null,
   }));
+}
+
+export type WalletMovement = {
+  id: string;
+  kind: string;
+  deltaCents: number;
+  createdAt: Date;
+};
+
+export type MyWallet = {
+  balanceCents: number;
+  movements: WalletMovement[];
+  /** one request waits at a time, so the newest row is the one to report on */
+  withdrawal: { amountCents: number; status: string } | null;
+  /** a top-up Telebirr was given but has not confirmed, so it is not in the balance yet */
+  awaitingCents: number;
+};
+
+/**
+ * The participant's own money: the live balance, the movements that add up to
+ * it, and the two states that belong to someone else to finish — Telebirr
+ * confirming a top-up, the owner answering a withdrawal request.
+ */
+export async function myWallet(accountId: string): Promise<MyWallet> {
+  const wallet = await walletOfAccount(accountId);
+  const [balanceCents, movements, withdrawal, awaiting] = await Promise.all([
+    balanceOf(wallet.id),
+    prisma.ledgerEntry.findMany({
+      where: { walletId: wallet.id },
+      orderBy: { createdAt: "desc" },
+      take: 12,
+      select: { id: true, kind: true, deltaCents: true, createdAt: true },
+    }),
+    prisma.withdrawal.findFirst({
+      where: { walletId: wallet.id },
+      orderBy: { createdAt: "desc" },
+      select: { amountCents: true, status: true },
+    }),
+    prisma.payment.aggregate({
+      where: { walletId: wallet.id, purpose: "topup", status: { in: ["created", "checkout_published"] } },
+      _sum: { amountCents: true },
+    }),
+  ]);
+
+  return {
+    balanceCents,
+    movements,
+    withdrawal,
+    awaitingCents: awaiting._sum.amountCents ?? 0,
+  };
 }
 
 export type MyNotice = {
@@ -231,6 +295,73 @@ export async function numberRoster(): Promise<RosterRow[]> {
       status: entry.status,
       phone: entry.account.phone,
     }));
+}
+
+export type WalletTotals = {
+  wallets: number;
+  /** wallets the participants can still spend or withdraw from */
+  holders: number;
+  /** money held for participants — not income: prize and top-up cash owed back */
+  holdingCents: number;
+};
+
+/**
+ * What the portal is currently holding on other people's balances. Read off the
+ * ledger rather than any stored figure, so it cannot disagree with /me.
+ */
+export async function walletTotals(): Promise<WalletTotals> {
+  const [wallets, sums] = await Promise.all([
+    prisma.wallet.count(),
+    prisma.ledgerEntry.groupBy({ by: ["walletId"], _sum: { deltaCents: true } }),
+  ]);
+  const positive = sums.filter((row) => (row._sum.deltaCents ?? 0) > 0);
+  return {
+    wallets,
+    holders: positive.length,
+    holdingCents: positive.reduce((total, row) => total + (row._sum.deltaCents ?? 0), 0),
+  };
+}
+
+export type WithdrawalRow = {
+  id: string;
+  phone: string;
+  amountCents: number;
+  balanceCents: number;
+  createdAt: Date;
+};
+
+/**
+ * Requests waiting for the owner to hand cash over. The wallet number is the
+ * only way to know whose money it is, and this is rendered on /admin only.
+ */
+export async function pendingWithdrawals(limit = 20): Promise<WithdrawalRow[]> {
+  const rows = await prisma.withdrawal.findMany({
+    where: { status: "pending" },
+    orderBy: { createdAt: "asc" },
+    take: limit,
+    select: {
+      id: true,
+      walletId: true,
+      amountCents: true,
+      createdAt: true,
+      wallet: { select: { account: { select: { phone: true } } } },
+    },
+  });
+
+  const balances = await prisma.ledgerEntry.groupBy({
+    by: ["walletId"],
+    where: { walletId: { in: rows.map((row) => row.walletId) } },
+    _sum: { deltaCents: true },
+  });
+  const held = new Map(balances.map((row) => [row.walletId, row._sum.deltaCents ?? 0]));
+
+  return rows.map((row) => ({
+    id: row.id,
+    phone: row.wallet.account.phone,
+    amountCents: row.amountCents,
+    balanceCents: held.get(row.walletId) ?? 0,
+    createdAt: row.createdAt,
+  }));
 }
 
 export type ActivityRow = {

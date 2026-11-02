@@ -31,6 +31,7 @@ model Account {
   updatedAt DateTime @updatedAt
   entries   Entry[]
   notices   Notice[]
+  wallet    Wallet?
 }
 
 model House {
@@ -103,7 +104,12 @@ model Entry {
 
 model Payment {
   id             String   @id @default(cuid())
-  entryId        String
+  /// set when this order buys a seat
+  entryId        String?
+  /// set when this order tops a wallet up
+  walletId       String?
+  /// seat | topup — decide what a settled order must do
+  purpose        String   @default("seat")
   /// Telebirr merch_order_id, ^[A-Za-z0-9]+$ — echoed back by every gateway leg
   merchOrderId   String   @unique
   prepayId       String?
@@ -123,11 +129,63 @@ model Payment {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
-  entry          Entry    @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  entry          Entry?   @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  wallet         Wallet?  @relation(fields: [walletId], references: [id], onDelete: Cascade)
 
   @@index([entryId])
+  @@index([walletId])
   @@index([status])
   @@index([status, checkedAt])
+  @@index([purpose, status])
+}
+
+/// A participant's balance, in cents. Money is never stored on the account row:
+/// the balance is always the sum of the ledger, so a wallet cannot drift away
+/// from what actually happened.
+model Wallet {
+  id        String   @id @default(cuid())
+  accountId String   @unique
+  createdAt DateTime @default(now())
+  account   Account  @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  payments  Payment[]
+  entries   LedgerEntry[]
+  withdrawals Withdrawal[]
+}
+
+/// Append-only money movements. Never update or delete a row: the balance is
+/// rebuilt from these, and each event may only write once, guarded by the
+/// unique key on (wallet, kind, reference).
+/// kind: topup | seat | prize | withdrawal | refund
+/// reference: order id for topup, entry id for seat, "<drawId>:<place>" for
+/// prize, withdrawal id for withdrawal.
+model LedgerEntry {
+  id         String   @id @default(cuid())
+  walletId   String
+  kind       String
+  /// positive credits the wallet, negative debits it
+  deltaCents Int
+  refId      String
+  createdAt  DateTime @default(now())
+  wallet     Wallet   @relation(fields: [walletId], references: [id], onDelete: Cascade)
+
+  @@unique([walletId, kind, refId])
+  @@index([walletId, createdAt])
+}
+
+/// A participant asking for their balance to be handed over in cash. The money
+/// only leaves the wallet when the owner marks it paid.
+model Withdrawal {
+  id          String    @id @default(cuid())
+  walletId    String
+  amountCents Int
+  /// pending | paid | rejected
+  status      String    @default("pending")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  settledAt   DateTime?
+  wallet      Wallet    @relation(fields: [walletId], references: [id], onDelete: Cascade)
+
+  @@index([status, createdAt])
 }
 
 model Draw {
@@ -153,7 +211,7 @@ model Draw {
   entropy          String
   /// sha256(entropy | ordered participant ids) — publishable commitment
   commitment       String
-  /// pending | paid | refunded
+  /// pending | credited (on the winners' balances) | paid | refunded
   payoutStatus     String   @default("pending")
   createdAt        DateTime @default(now())
 

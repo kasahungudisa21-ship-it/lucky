@@ -1,9 +1,9 @@
 import { prisma } from "@/lib/db";
-import { SEAT_HOLD_MINUTES } from "@/lib/houses";
+import { MAX_HELD_PER_HOUSE, SEAT_HOLD_MINUTES } from "@/lib/houses";
 import { serviceFeeCents } from "@/lib/pricing";
 
 export class ClaimError extends Error {
-  constructor(readonly reason: "house_closed" | "number_taken" | "already_holds_number" | "number_out_of_range") {
+  constructor(readonly reason: "house_closed" | "number_taken" | "number_limit" | "number_out_of_range") {
     super(reason);
     this.name = "ClaimError";
   }
@@ -11,15 +11,15 @@ export class ClaimError extends Error {
 
 const holdDeadline = () => new Date(Date.now() + SEAT_HOLD_MINUTES * 60_000);
 
-/** A participant may hold at most one number per house at a time. */
-export async function activeEntry(accountId: string, houseId: string) {
-  return prisma.entry.findFirst({
+/** The numbers this account still owns in this house: unpaid or paid, not yet drawn. */
+export async function heldEntries(accountId: string, houseId: string) {
+  return prisma.entry.findMany({
     where: {
       accountId,
       houseId,
       status: { in: ["pending_payment", "paid"] },
     },
-    include: { house: { select: { capacity: true, round: true } } },
+    orderBy: { seatNumber: "asc" },
   });
 }
 
@@ -34,9 +34,10 @@ export async function claimNumber(input: { accountId: string; houseId: string; n
     throw new ClaimError("number_out_of_range");
   }
 
-  const existing = await activeEntry(input.accountId, input.houseId);
-  if (existing && existing.seatNumber !== input.number) throw new ClaimError("already_holds_number");
-  if (existing) return existing;
+  const mine = await heldEntries(input.accountId, input.houseId);
+  const alreadyHeld = mine.find((entry) => entry.seatNumber === input.number);
+  if (alreadyHeld) return alreadyHeld;
+  if (mine.length >= MAX_HELD_PER_HOUSE) throw new ClaimError("number_limit");
 
   return prisma.$transaction(async (tx) => {
     const seat = await tx.seat.findUnique({ where: { houseId_number: { houseId: input.houseId, number: input.number } } });

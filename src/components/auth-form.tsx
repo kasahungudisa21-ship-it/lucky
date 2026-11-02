@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { t } from "@/lib/ui";
+import { tr, type Lang } from "@/lib/ui";
 
 const ERROR_KEYS: Record<string, string> = {
   invalid_phone: "error.phone",
@@ -13,7 +13,8 @@ const ERROR_KEYS: Record<string, string> = {
   exists: "error.exists",
 };
 
-export function AuthForm({ mode }: { mode: "register" | "login" }) {
+export function AuthForm({ mode, lang }: { mode: "register" | "login"; lang: Lang }) {
+  const t = tr(lang);
   const router = useRouter();
   const [phone, setPhone] = useState("");
   const [pin, setPin] = useState("");

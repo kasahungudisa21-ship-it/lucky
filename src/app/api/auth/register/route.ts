@@ -27,7 +27,7 @@ export async function POST(request: Request) {
   if (await prisma.account.findUnique({ where: { phone } })) return bad("exists");
 
   const account = await prisma.account.create({
-    data: { phone, pinHash: await hashPin(parsed.data.pin) },
+    data: { phone, pinHash: await hashPin(parsed.data.pin), wallet: { create: {} } },
   });
 
   const store = await cookies();

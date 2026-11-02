@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { houseSummaries } from "@/lib/repo";
 import { formatEtb } from "@/lib/money";
-import { t } from "@/lib/ui";
+import { MAX_HELD_PER_HOUSE } from "@/lib/houses";
+import { text } from "@/lib/locale";
 import { currentAccount } from "@/lib/auth";
 import { gatewayStatus } from "@/lib/services/payments";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
+  const t = await text();
   const account = await currentAccount();
   const gateway = gatewayStatus();
   const houses = await houseSummaries();
@@ -90,6 +92,13 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="card rule">
+            <i>{MAX_HELD_PER_HOUSE}</i>
+            <div>
+              <b>{t("rules.holdTitle")}</b>
+              <p>{t("rules.hold", [MAX_HELD_PER_HOUSE])}</p>
+            </div>
+          </div>
+          <div className="card rule">
             <i>T</i>
             <div>
               <b>{t("pay.title")}</b>
@@ -101,6 +110,13 @@ export default async function HomePage() {
             <div>
               <b>{t("draws.title")}</b>
               <p>{t("rules.draw")}</p>
+            </div>
+          </div>
+          <div className="card rule">
+            <i>◇</i>
+            <div>
+              <b>{t("rules.fairTitle")}</b>
+              <p>{t("rules.fair")}</p>
             </div>
           </div>
         </div>

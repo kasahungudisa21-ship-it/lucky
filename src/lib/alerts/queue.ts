@@ -8,7 +8,10 @@ export type AlertEventName =
   | "draw_settled"
   | "hold_expired"
   | "orphan_payment"
-  | "gateway_error";
+  | "gateway_error"
+  | "wallet_topup"
+  | "seat_from_balance"
+  | "withdrawal_requested";
 
 const MAX_ATTEMPTS = 4;
 const STALE_SENDING_MS = 120_000;

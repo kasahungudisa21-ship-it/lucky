@@ -8,24 +8,25 @@ import {
   houseSummaries,
   numberRoster,
   participantReport,
+  pendingWithdrawals,
   recentActivity,
   recentDraws,
+  walletTotals,
 } from "@/lib/repo";
+import { WithdrawalActions } from "@/components/withdrawal-actions";
 import { formatEtb } from "@/lib/money";
 import { SERVICE_RATE, fullHousePrizeShares } from "@/lib/pricing";
 import { merchantWallet, isMerchantWallet } from "@/lib/telebirr/config";
 import { resolveMode } from "@/lib/services/payments";
 import { schedulerStatus } from "@/lib/scheduler";
-import { t } from "@/lib/ui";
+import { hasKey, type Tr } from "@/lib/ui";
+import { currentLang, text } from "@/lib/locale";
 
 export const dynamic = "force-dynamic";
 
-function eventLabel(event: string) {
-  if (event === "payment_settled") return t("event.payment_settled");
-  if (event === "draw_settled") return t("event.draw_settled");
-  if (event === "hold_expired") return t("event.hold_expired");
-  if (event === "orphan_payment") return t("event.orphan_payment");
-  return t("event.gateway_error");
+function eventLabel(t: Tr, event: string) {
+  const key = `event.${event}`;
+  return hasKey(key) ? t(key) : t("event.gateway_error");
 }
 
 /** UTC clock, shown as the digits are stored so no locale can reorder them. */
@@ -40,6 +41,7 @@ const CHANNEL_NAMES: Record<string, string> = {
 /** The dashboard belongs to the wallet that receives the payments, so the
  * merchant number in the environment is the only access list. */
 export default async function AdminPage() {
+  const [t, lang] = await Promise.all([text(), currentLang()]);
   const account = await currentAccount();
   if (!account) redirect("/login");
 
@@ -58,14 +60,17 @@ export default async function AdminPage() {
 
   const payee = merchantWallet() ?? "";
 
-  const [houses, draws, activity, channels, roster, participant] = await Promise.all([
-    houseSummaries(),
-    recentDraws(5),
-    recentActivity(12),
-    alertReports(),
-    numberRoster(),
-    participantReport(),
-  ]);
+  const [houses, draws, activity, channels, roster, participant, withdrawals, wallets] =
+    await Promise.all([
+      houseSummaries(),
+      recentDraws(5),
+      recentActivity(12),
+      alertReports(),
+      numberRoster(),
+      participantReport(),
+      pendingWithdrawals(),
+      walletTotals(),
+    ]);
   const slots = houses.reduce((total, house) => total + house.capacity, 0);
   const paidNumbers = houses.reduce((total, house) => total + house.paidCount, 0);
 
@@ -198,7 +203,7 @@ export default async function AdminPage() {
                   <Link href={`/houses/${house.id}`}>{t("houses.choose")}</Link>
                 </td>
                 <td>
-                  <DrawButton houseId={house.id} />
+                  <DrawButton houseId={house.id} lang={lang} />
                 </td>
               </tr>
             ))}
@@ -242,6 +247,47 @@ export default async function AdminPage() {
             </table>
           </div>
         </>
+      )}
+
+      <div className="sec-head" style={{ marginTop: 26 }}>
+        <div>
+          <h2>{t("dash.wallets")}</h2>
+          <p>{t("dash.balanceTotal")}</p>
+        </div>
+        <span className="pill num">
+          {formatEtb(wallets.holdingCents)} {t("common.birr")}
+        </span>
+      </div>
+
+      <div className="rows">
+        <div className="row">
+          <span>{t("dash.balanceCount")}</span>
+          <b className="num">{wallets.holders}</b>
+        </div>
+      </div>
+
+      <label className="fld" style={{ marginTop: 18 }}>
+        {t("dash.withdrawals")}
+      </label>
+      {withdrawals.length === 0 ? (
+        <p className="note">{t("dash.noWithdrawals")}</p>
+      ) : (
+        <div className="rows">
+          {withdrawals.map((request) => (
+            <div className="row" key={request.id}>
+              <span className="num">
+                {t("dash.withdrawalFrom", [
+                  request.phone,
+                  formatEtb(request.amountCents),
+                  formatEtb(Math.max(0, request.balanceCents - request.amountCents)),
+                ])}
+              </span>
+              <span className="places">
+                <WithdrawalActions withdrawalId={request.id} lang={lang} />
+              </span>
+            </div>
+          ))}
+        </div>
       )}
 
       {draws.length > 0 && (
@@ -425,7 +471,7 @@ export default async function AdminPage() {
           {activity.map((row) => (
             <div className="row" key={row.id}>
               <span className="num">
-                {eventLabel(row.event)} · <span className="mono">{clock(row.createdAt.toISOString())}</span>
+                {eventLabel(t, row.event)} · <span className="mono">{clock(row.createdAt.toISOString())}</span>
               </span>
               <span className="places">
                 {row.body.split("\n").map((line, index) => (

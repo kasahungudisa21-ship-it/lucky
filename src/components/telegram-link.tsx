@@ -1,14 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { t } from "@/lib/ui";
+import { tr, type Lang } from "@/lib/ui";
 
 /**
  * Telegram cannot be reached by phone number, so the participant opens the bot
  * themselves through the link this hands out. The chat id lands on the account a
  * few seconds later when the telegram job reads the bot's inbox.
  */
-export function TelegramLink({ linked, offered }: { linked: boolean; offered: boolean }) {
+export function TelegramLink({
+  linked,
+  offered,
+  lang,
+}: {
+  linked: boolean;
+  offered: boolean;
+  lang: Lang;
+}) {
+  const t = tr(lang);
   const [url, setUrl] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [unavailable, setUnavailable] = useState(false);

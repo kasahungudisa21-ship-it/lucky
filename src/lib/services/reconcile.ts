@@ -28,8 +28,17 @@ export async function reconcilePendingPayments(now = new Date()): Promise<Reconc
   const pending = await prisma.payment.findMany({
     where: {
       status: { in: ["created", "checkout_published"] },
-      entry: { status: "pending_payment" },
-      OR: [{ checkedAt: null }, { checkedAt: { lt: olderThan } }],
+      // a seat order is worth asking about while its number is still unpaid; a
+      // top-up order has no number, so its own status is all there is
+      AND: [
+        {
+          OR: [
+            { purpose: "topup" },
+            { entry: { is: { status: "pending_payment" } } },
+          ],
+        },
+        { OR: [{ checkedAt: null }, { checkedAt: { lt: olderThan } }] },
+      ],
     },
     select: { merchOrderId: true },
     orderBy: { checkedAt: "asc" },

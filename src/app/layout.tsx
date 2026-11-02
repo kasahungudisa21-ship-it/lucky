@@ -3,23 +3,26 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { Stage } from "@/components/stage";
 import { BRAND_EN, BRAND_NAME } from "@/lib/brand";
-import { t } from "@/lib/ui";
+import { currentLang, text } from "@/lib/locale";
 import { currentAccount } from "@/lib/auth";
 import { unreadNoticeCount } from "@/lib/repo";
 
-export const metadata: Metadata = {
-  title: t("brand.tagline"),
-  description: t("hero.title"),
-};
+/** Read through the cookie, so a visitor who switched to English gets an English
+ * browser tab and screen reader rather than an Amharic one. */
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await text();
+  return { title: t("brand.tagline"), description: t("hero.title") };
+}
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const account = await currentAccount();
+  const [account, lang] = await Promise.all([currentAccount(), currentLang()]);
   const unread = account ? await unreadNoticeCount(account.accountId) : 0;
+  const t = await text();
 
   return (
-    <html lang="am">
+    <html lang={lang}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

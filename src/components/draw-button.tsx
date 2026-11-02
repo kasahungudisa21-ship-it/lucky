@@ -2,16 +2,17 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { t } from "@/lib/ui";
+import { tr, type Lang, type Tr } from "@/lib/ui";
 
 // A round that is not fully paid is the only reason a push can fail here, so
 // every skip is reported as that rather than as an unexplained error.
-function skipText(reason: string | undefined) {
+function skipText(t: Tr, reason: string | undefined) {
   if (reason === "closed") return t("error.houseClosed");
   return t("admin.notFull");
 }
 
-export function DrawButton({ houseId }: { houseId: string }) {
+export function DrawButton({ houseId, lang }: { houseId: string; lang: Lang }) {
+  const t = tr(lang);
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -29,7 +30,7 @@ export function DrawButton({ houseId }: { houseId: string }) {
         setMessage(t("dash.errored"));
         return;
       }
-      setMessage(payload.drawn ? t("event.draw_settled") : skipText(payload.reason));
+      setMessage(payload.drawn ? t("event.draw_settled") : skipText(t, payload.reason));
       if (payload.drawn) router.refresh();
     } catch {
       setMessage(t("dash.errored"));

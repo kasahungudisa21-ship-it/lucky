@@ -2,9 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { t } from "@/lib/ui";
+import { tr, type Lang } from "@/lib/ui";
 
-export function MarkReadButton() {
+export function MarkReadButton({ lang }: { lang: Lang }) {
+  const t = tr(lang);
   const router = useRouter();
   const [busy, setBusy] = useState(false);
 

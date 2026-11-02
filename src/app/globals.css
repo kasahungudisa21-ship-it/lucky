@@ -402,6 +402,14 @@ header {
   color: var(--gold); background: rgba(158, 107, 18, 0.14); border: 1px solid rgba(158, 107, 18, 0.32);
 }
 .nav-cta { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+/* The language switch: quieter than the page links, because it changes the page
+   rather than navigating away from it. */
+.lang {
+  color: var(--muted); text-decoration: none; font-size: 12.5px; font-weight: 600;
+  letter-spacing: 0.04em; padding: 5px 9px; border-radius: 999px;
+  border: 1px solid rgba(22, 32, 43, 0.16); transition: 0.18s;
+}
+.lang:hover { color: var(--txt); border-color: rgba(22, 32, 43, 0.4); }
 
 .btn {
   font: inherit; font-size: 14px; font-weight: 600; letter-spacing: 0.01em; border: 0;

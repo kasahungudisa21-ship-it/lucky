@@ -4,20 +4,24 @@ import { currentAccount } from "@/lib/auth";
 import { Ball } from "@/components/ball";
 import { MarkReadButton } from "@/components/mark-read";
 import { TelegramLink } from "@/components/telegram-link";
-import { myEntries, myNotices } from "@/lib/repo";
+import { WalletPanel } from "@/components/wallet-panel";
+import { myEntries, myNotices, myWallet } from "@/lib/repo";
 import { telegramLinkState } from "@/lib/notices/telegram";
 import { formatEtb } from "@/lib/money";
-import { t } from "@/lib/ui";
+import { TOPUP_MAX_CENTS, TOPUP_MIN_CENTS } from "@/lib/services/wallet";
+import { currentLang, text } from "@/lib/locale";
 
 /** UTC clock, shown as the digits are stored so no locale can reorder them. */
 const clock = (at: Date) => `${at.toISOString().slice(5, 10)} ${at.toISOString().slice(11, 16)}`;
 
 export default async function MinePage() {
+  const [t, lang] = await Promise.all([text(), currentLang()]);
   const account = await currentAccount();
   if (!account) redirect("/login");
-  const [entries, notices, link] = await Promise.all([
+  const [entries, notices, wallet, link] = await Promise.all([
     myEntries(account.accountId),
     myNotices(account.accountId),
+    myWallet(account.accountId),
     telegramLinkState(account.accountId),
   ]);
 
@@ -108,6 +112,33 @@ export default async function MinePage() {
 
       <div className="sec-head" style={{ marginTop: 26 }}>
         <div>
+          <h2>{t("wallet.title")}</h2>
+          <p>{t("wallet.rules")}</p>
+        </div>
+        <span className="pill num">
+          {formatEtb(wallet.balanceCents)} {t("common.birr")}
+        </span>
+      </div>
+
+      <div className="card card--flat">
+        <WalletPanel
+          lang={lang}
+          balanceCents={wallet.balanceCents}
+          movements={wallet.movements.map((movement) => ({
+            id: movement.id,
+            kind: movement.kind,
+            deltaCents: movement.deltaCents,
+            at: clock(movement.createdAt),
+          }))}
+          withdrawal={wallet.withdrawal}
+          awaitingCents={wallet.awaitingCents}
+          minCents={TOPUP_MIN_CENTS}
+          maxCents={TOPUP_MAX_CENTS}
+        />
+      </div>
+
+      <div className="sec-head" style={{ marginTop: 26 }}>
+        <div>
           <h2>{t("mine.notices")}</h2>
           <p>{t("mine.inAppOnly")}</p>
         </div>
@@ -133,7 +164,7 @@ export default async function MinePage() {
           </div>
           {notices.unread > 0 && (
             <div className="form__btns">
-              <MarkReadButton />
+              <MarkReadButton lang={lang} />
             </div>
           )}
         </>
@@ -143,7 +174,7 @@ export default async function MinePage() {
         <div className="unit__top">
           <b>{t("mine.linkTelegram")}</b>
         </div>
-        <TelegramLink linked={link.linked} offered={link.offered} />
+        <TelegramLink lang={lang} linked={link.linked} offered={link.offered} />
       </div>
     </section>
   );

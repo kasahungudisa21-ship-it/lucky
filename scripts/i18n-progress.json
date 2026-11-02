@@ -753,9 +753,10 @@
     "authored": true
   },
   "notice.won": {
-    "am": "አሸነፉ። ቤት {0}፣ ዙር {1}፣ ቁጥር {2} {3} ደረጃ። ሽልማትዎ {4} ብር ነው።",
-    "script": "glottal_a-sha-na-fu-stop bee-te {0}-comma zu-re {1}-comma qu-the-re {2} {3} da-ra-jaa-stop she-le-maa-te-wo {4} be-re na-we-stop",
-    "authored": true
+    "am": "አሸነፉ። ቤት {0}፣ ዙር {1}፣ ቁጥር {2} {3} ደረጃ። ሽልማትዎ {4} ብር በሚዛንዎ ላይ ተጨምሯል።",
+    "script": "glottal_a-sha-na-fu-stop bee-te {0}-comma zu-re {1}-comma qu-the-re {2} {3} da-ra-jaa-stop she-le-maa-te-wo {4} be-re ba-mi-zaa-ne-wo laa-ye ta-cha-me-rwa-le-stop",
+    "authored": true,
+    "back": ""
   },
   "notice.closed": {
     "am": "ቤት {0} ተሞልቷል፣ የዕጣ ማውጫው በራሱ ተካሄዷል። አላሸነፉም። ውጤቱን ይመልከቱ።",
@@ -826,5 +827,319 @@
     "am": "የቴሌግራም ማስተሳሰሪያ",
     "script": "ya-tee-lee-ge-raa-me maa-se-ta-saa-sa-ri-yaa",
     "authored": true
+  },
+  "alert.topupSubject": {
+    "am": "ሚዛን ተጨምሯል",
+    "script": "mi-zaa-ne ta-cha-me-rwa-le",
+    "authored": true,
+    "back": "Added wallet balance."
+  },
+  "alert.topup": {
+    "am": "ቴሌቢር {0} ብር ለተሳታፊ ሚዛን ጨምሯል። የክፍያ ቁጥር {1}። ተሳታፊው እና አዲሱ ሚዛን በዳሽቦርዱ ላይ ናቸው።",
+    "script": "tee-lee-bi-re {0} be-re la-ta-saa-taa-fi mi-zaa-ne cha-me-rwa-le-stop ya-ke-fe-yaa qu-the-re {1}-stop ta-saa-taa-fi-we glottal_e-naa glottal_a-di-su mi-zaa-ne ba-daa-she-bo-re-du laa-ye naa-ca-we-stop",
+    "authored": true,
+    "back": "Telebir has added {0} to participant balance. Command {1}. The person and the new balance are on the dashboard."
+  },
+  "alert.withdrawSubject": {
+    "am": "የማውጣት ጥያቄ",
+    "script": "ya-maa-we-thaa-te the-yaa-qee",
+    "authored": true,
+    "back": "Waiting for exit"
+  },
+  "alert.withdraw": {
+    "am": "አንድ ተሳታፊ {0} ብር ከሚዛናቸው ለማውጣት ይጠይቃል። ቁጥሩ እና ጥያቄው በዳሽቦርዱ ላይ ናቸው።",
+    "script": "glottal_a-ne-de ta-saa-taa-fi {0} be-re ka-mi-zaa-naa-ca-we la-maa-we-thaa-te ye-tha-ye-qaa-le-stop qu-the-ru glottal_e-naa the-yaa-qee-we ba-daa-she-bo-re-du laa-ye naa-ca-we-stop",
+    "authored": true,
+    "back": "A participant requests to withdraw {0} from their account. The number and question are on the dashboard."
+  },
+  "event.wallet_topup": {
+    "am": "ሚዛን ተጨምሯል",
+    "script": "mi-zaa-ne ta-cha-me-rwa-le",
+    "authored": true,
+    "back": "Added balance."
+  },
+  "event.withdrawal_requested": {
+    "am": "ማውጣት ተጠየቀ",
+    "script": "maa-we-thaa-te ta-tha-ya-qa",
+    "authored": true,
+    "back": "He asked to leave"
+  },
+  "event.withdrawal_paid": {
+    "am": "ማውጣት ተከፍሏል",
+    "script": "maa-we-thaa-te ta-ka-fe-lwa-le",
+    "authored": true,
+    "back": "Withdrawal paid."
+  },
+  "notice.topup": {
+    "am": "ቴሌቢር {0} ብር ለሚዛንዎ ተጨምሯል። አሁን ሚዛንዎ {1} ብር ነው።",
+    "script": "tee-lee-bi-re {0} be-re la-mi-zaa-ne-wo ta-cha-me-rwa-le-stop glottal_a-hu-ne mi-zaa-ne-wo {1} be-re na-we-stop",
+    "authored": true,
+    "back": "Telebeer has verified your recharge. {0} Birr has been added to your account which is now {1}."
+  },
+  "notice.withdrawal": {
+    "am": "የማውጣት ጥያቄዎ ተከፍሏል። {0} ብር ወጣ። ሚዛንዎ አሁን {1} ብር ነው።",
+    "script": "ya-maa-we-thaa-te the-yaa-qee-wo ta-ka-fe-lwa-le-stop {0} be-re wa-thaa-stop mi-zaa-ne-wo glottal_a-hu-ne {1} be-re na-we-stop",
+    "authored": true,
+    "back": "The owner has paid {0} Birr. Your balance is now {1} Rs."
+  },
+  "wallet.title": {
+    "am": "የእኔ ሚዛን",
+    "back": "My balance"
+  },
+  "wallet.balance": {
+    "am": "የቦርሳዎ ሚዛን",
+    "script": "ya-bo-re-saa-wo mi-zaa-ne",
+    "authored": true,
+    "back": "Balance your wallet"
+  },
+  "wallet.topupTitle": {
+    "am": "የቴሌቢር ሚዛን መጨመር",
+    "script": "ya-tee-lee-bi-re mi-zaa-ne ma-cha-ma-re",
+    "authored": true,
+    "back": "Topping up the balance of Telebir"
+  },
+  "wallet.topup": {
+    "am": "ሚዛን ይጨምሩ",
+    "script": "mi-zaa-ne ye-cha-me-ru",
+    "authored": true,
+    "back": "Add to your account"
+  },
+  "wallet.topupRow": {
+    "am": "ሚዛን መጨመር",
+    "script": "mi-zaa-ne ma-cha-ma-re",
+    "authored": true,
+    "back": "Balancing the filling"
+  },
+  "wallet.topupWallet": {
+    "am": "የቴሌቢር ዲጂታል ቦርሳዎ {0} ብር ተከፍሏል። ገንዘቡ በሚዛንዎ ላይ ይጨምራል።",
+    "script": "ya-tee-lee-bi-re di-ji-taa-le bo-re-saa-wo {0} be-re ta-ka-fe-lwa-le-stop ga-ne-za-bu ba-mi-zaa-ne-wo laa-ye ye-cha-me-raa-le-stop",
+    "authored": true,
+    "back": "Your Telebir Digital Wallet {0} will be debited and the funds will go to your balance."
+  },
+  "wallet.topupDone": {
+    "am": "{0} ብር ለሚዛንዎ ተጨምሯል። አሁን ሚዛንዎ {1} ብር ነው።",
+    "script": "{0} be-re la-mi-zaa-ne-wo ta-cha-me-rwa-le-stop glottal_a-hu-ne mi-zaa-ne-wo {1} be-re na-we-stop",
+    "authored": true,
+    "back": "{0} Birr has been added to your account which is now {1}."
+  },
+  "wallet.credited": {
+    "am": "ሚዛን ተጨምሯል",
+    "script": "mi-zaa-ne ta-cha-me-rwa-le",
+    "authored": true,
+    "back": "Added to balance."
+  },
+  "wallet.awaitingTopup": {
+    "am": "ቴሌቢርን በመጠበቅ ላይ",
+    "back": "Waiting for the TV"
+  },
+  "wallet.amount": {
+    "am": "የሚጨመርበት መጠን",
+    "back": "Amount to be added"
+  },
+  "wallet.min": {
+    "am": "በ{0} እና {1} ብር መካከል ይጨምሩ።",
+    "back": "Add between {0} and {1} bucks."
+  },
+  "wallet.history": {
+    "am": "የሚዛን እንቅስቃሴዎች",
+    "script": "ya-mi-zaa-ne glottal_e-ne-qe-se-qaa-see-wo-ce",
+    "authored": true,
+    "back": "balancing activities"
+  },
+  "wallet.empty": {
+    "am": "እስካሁን ምንም ነገር በእርስዎ ሚዛን ላይ አልተንቀሳቀሰም። ገንዘብ ጨምር እና እዚህ ይታያል።",
+    "script": "glottal_e-se-kaa-hu-ne me-ne-me na-ga-re ba-glottal_e-re-se-wo mi-zaa-ne laa-ye glottal_a-le-ta-ne-qa-saa-qa-sa-me-stop ga-ne-za-be cha-me-re glottal_e-naa glottal_e-zi-he ye-taa-yaa-le-stop",
+    "authored": true,
+    "back": "Nothing has been moved to your balance yet. Add money and it will appear here."
+  },
+  "wallet.payFromBalance": {
+    "am": "{0} ብር ከሚዛንዎ ይክፈሉ።",
+    "script": "{0} be-re ka-mi-zaa-ne-wo ye-ke-fa-lu-stop",
+    "authored": true,
+    "back": "Pay {0} Birr from your account."
+  },
+  "wallet.paidFromBalance": {
+    "am": "ከሚዛንዎ የተከፈለ። ቁጥር {0} ለዚህ ዙር የእርስዎ ነው።",
+    "script": "ka-mi-zaa-ne-wo ya-ta-ka-fa-la-stop qu-the-re {0} la-zi-he zu-re ya-glottal_e-re-se-wo na-we-stop",
+    "authored": true,
+    "back": "Deducted from your account. The number {0} is yours for this round."
+  },
+  "wallet.insufficient": {
+    "am": "ሚዛንዎ {0} ብር ነው። ይህ ቁጥር {1} ብር ይጠይቃል።",
+    "script": "mi-zaa-ne-wo {0} be-re na-we-stop ye-he qu-the-re {1} be-re ye-tha-ye-qaa-le-stop",
+    "authored": true,
+    "back": "Your balance is {0} and this number is {1} Birr. Add the difference first."
+  },
+  "wallet.withdraw": {
+    "am": "ገንዘብ ማውጣት",
+    "script": "ga-ne-za-be maa-we-thaa-te",
+    "authored": true,
+    "back": "Spend money"
+  },
+  "wallet.withdrawAmount": {
+    "am": "የሚወጣበት መጠን",
+    "back": "Amount of withdrawal"
+  },
+  "wallet.withdrawButton": {
+    "am": "ይህንን ማውጣት ይጠይቁ",
+    "script": "ye-he-ne-ne maa-we-thaa-te ye-tha-ye-qu",
+    "authored": true,
+    "back": "Ask for this exit"
+  },
+  "wallet.withdrawPending": {
+    "am": "{0} ብር ማውጣትህ ባለቤቱን እየጠበቀ ነው።",
+    "back": "{0} Your withdrawal is waiting for the owner."
+  },
+  "wallet.withdrawPaid": {
+    "am": "ማውጣት ተከፍሏል",
+    "script": "maa-we-thaa-te ta-ka-fe-lwa-le",
+    "authored": true,
+    "back": "Withdrawal paid."
+  },
+  "wallet.withdrawRejected": {
+    "am": "ማውጣት አልተፈቀደም",
+    "script": "maa-we-thaa-te glottal_a-le-ta-fa-qa-da-me",
+    "authored": true,
+    "back": "He refused to leave."
+  },
+  "wallet.kindTopup": {
+    "am": "መጨመር",
+    "script": "ma-cha-ma-re",
+    "authored": true,
+    "back": "fill out"
+  },
+  "wallet.kindSeat": {
+    "am": "የተከፈለ ቁጥር",
+    "back": "Paid number"
+  },
+  "wallet.kindPrize": {
+    "am": "ሽልማት",
+    "back": "Award"
+  },
+  "wallet.kindWithdrawal": {
+    "am": "ማውጣት",
+    "script": "maa-we-thaa-te",
+    "authored": true,
+    "back": "exit"
+  },
+  "wallet.kindRefund": {
+    "am": "ተመላሽ ገንዘብ",
+    "back": "Refund"
+  },
+  "wallet.rules": {
+    "am": "የጨመሩት ገንዘብ በሚዛንዎ ላይ ይቆያል። ቁጥር ከዚህ ይከፈላል። ሽልማት በሚዛንዎ ላይ ይጨምራል።",
+    "script": "ya-cha-ma-ru-te ga-ne-za-be ba-mi-zaa-ne-wo laa-ye ye-qo-yaa-le-stop qu-the-re ka-zi-he ye-ka-fa-laa-le-stop she-le-maa-te ba-mi-zaa-ne-wo laa-ye ye-cha-me-raa-le-stop",
+    "authored": true,
+    "back": "The money you add will stay in your account. A number is paid from it, and a reward is added to it."
+  },
+  "dash.wallets": {
+    "am": "ሚዛኖች",
+    "back": "Scales"
+  },
+  "dash.balanceTotal": {
+    "am": "በሚዛኖች የተያዘ ገንዘብ",
+    "script": "ba-mi-zaa-no-ce ya-ta-yaa-za ga-ne-za-be",
+    "authored": true,
+    "back": "Money held in the account balance"
+  },
+  "dash.balanceCount": {
+    "am": "ገንዘብ ያላቸው ቦርሳዎች",
+    "script": "ga-ne-za-be yaa-laa-ca-we bo-re-saa-wo-ce",
+    "authored": true,
+    "back": "Wallets with money"
+  },
+  "dash.withdrawals": {
+    "am": "የማውጣት ጥያቄዎች",
+    "script": "ya-maa-we-thaa-te the-yaa-qee-wo-ce",
+    "authored": true,
+    "back": "Evacuation requests"
+  },
+  "dash.noWithdrawals": {
+    "am": "ማውጣት ጥያቄ የለም።",
+    "script": "maa-we-thaa-te the-yaa-qee ya-la-me-stop",
+    "authored": true,
+    "back": "Exit is not waiting."
+  },
+  "dash.markPaid": {
+    "am": "ይህንን አስረክቡ",
+    "back": "Submit this"
+  },
+  "dash.reject": {
+    "am": "እምቢ",
+    "back": "Refuse"
+  },
+  "dash.withdrawalFrom": {
+    "am": "ቁጥር {0} {1} ብር ይጠይቃል። አዲሱ ሚዛን {2} ብር ይሆናል።",
+    "script": "qu-the-re {0} {1} be-re ye-tha-ye-qaa-le-stop glottal_a-di-su mi-zaa-ne {2} be-re ye-ho-naa-le-stop",
+    "authored": true,
+    "back": "The number {0} requires {1}. Scale after it: # 2 #."
+  },
+  "dash.pending": {
+    "am": "በመጠባበቅ ላይ",
+    "back": "Waiting"
+  },
+  "alert.balanceSubject": {
+    "am": "ከሚዛን የተከፈለ",
+    "script": "ka-mi-zaa-ne ya-ta-ka-fa-la",
+    "authored": true,
+    "back": "Billed From Account - Home {0}"
+  },
+  "alert.balance": {
+    "am": "ቁጥር ከሚዛን የተከፈለ። ቤት {0}፣ ዙር {1}፣ ቁጥር {2}፣ {3} ከሚዛን ወጣ። ከቴሌቢር አዲስ ገንዘብ አልመጣም።",
+    "script": "qu-the-re ka-mi-zaa-ne ya-ta-ka-fa-la-stop bee-te {0}-comma zu-re {1}-comma qu-the-re {2}-comma {3} ka-mi-zaa-ne wa-thaa-stop ka-tee-lee-bi-re glottal_a-di-se ga-ne-za-be glottal_a-le-ma-thaa-me-stop",
+    "authored": true,
+    "back": "A participant paid a number from their wallet account. House {0}, Round {1}, Number {2}, {3} are out of their account. No new funds received from Telebir."
+  },
+  "event.seat_from_balance": {
+    "am": "ከሚዛን የተከፈለ",
+    "script": "ka-mi-zaa-ne ya-ta-ka-fa-la",
+    "authored": true,
+    "back": "Deducted from balance."
+  },
+  "wallet.withdrawRange": {
+    "am": "በ{0} እና {1} ብር መካከል ለማውጣት ይጠይቁ።",
+    "back": "Ask to withdraw between {0} and {1} rupees."
+  },
+  "error.numberLimit": {
+    "am": "በዚህ ቤት ውስጥ አስቀድመው {0} ቁጥሮችን ይይዛሉ። ሌላ ከመምረጥዎ በፊት አንዱን ይልቀቁት።",
+    "script": "ba-zi-he bee-te we-se-the glottal_a-se-qa-de-ma-we {0} qu-the-ro-ce-ne ye-ye-zaa-lu-stop lee-laa ka-ma-me-ra-the-wo ba-fi-te glottal_a-ne-du-ne ye-le-qa-qu-te-stop",
+    "authored": true,
+    "back": "You already have {0} numbers in this house, which most people can hold. Release one before choosing the other."
+  },
+  "house.holdLeft": {
+    "am": "የቀረው ጊዜ {0}።",
+    "script": "ya-qa-ra-we gi-zee {0}-stop",
+    "authored": true,
+    "back": ""
+  },
+  "house.holdGone": {
+    "am": "ጊዜው አልቋል።",
+    "script": "gi-zee-we glottal_a-le-qwaa-le-stop",
+    "authored": true,
+    "back": ""
+  },
+  "rules.fair": {
+    "am": "ሦስቱ ቦታዎች ወደ ተለያዩ ሰዎች ይሄዳሉ። እስካሁን ያላሸነፈ ሰው ቁጥር እስካለው ድረስ ማንም ሰው ከአንድ ቦታ በላይ አያገኝም።",
+    "script": "szo-se-tu bo-taa-wo-ce wa-da ta-la-yaa-yu sa-wo-ce ye-hee-daa-lu-stop glottal_e-se-kaa-hu-ne yaa-laa-sha-na-fa sa-we qu-the-re glottal_e-se-kaa-la-we de-ra-se maa-ne-me sa-we ka-glottal_a-ne-de bo-taa ba-laa-ye glottal_a-yaa-ga-nye-me-stop",
+    "authored": true,
+    "back": ""
+  },
+  "rules.hold": {
+    "am": "አንድ ሰው በአንድ ቤት ውስጥ እስከ {0} ቁጥሮች ሊይዝ ይችላል።",
+    "script": "glottal_a-ne-de sa-we ba-glottal_a-ne-de bee-te we-se-the glottal_e-se-ka {0} qu-the-ro-ce li-ye-ze ye-ce-laa-le-stop",
+    "authored": true,
+    "back": ""
+  },
+  "rules.fairTitle": {
+    "am": "ሦስቱ ቦታዎች ለማን ነው የሚሄዱት",
+    "script": "szo-se-tu bo-taa-wo-ce la-maa-ne na-we ya-mi-hee-du-te",
+    "authored": true,
+    "back": ""
+  },
+  "rules.holdTitle": {
+    "am": "አንድ ሰው ሊይዝ የሚችላቸው ቁጥሮች",
+    "script": "glottal_a-ne-de sa-we li-ye-ze ya-mi-ce-laa-ca-we qu-the-ro-ce",
+    "authored": true,
+    "back": ""
   }
 }

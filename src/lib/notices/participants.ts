@@ -1,7 +1,14 @@
 import { prisma } from "@/lib/db";
 import type { DrawResult } from "@/lib/services/draws";
 import { emitNotices, type NoticeInput } from "./queue";
-import { closedNotice, paymentNotice, wonNotice } from "./templates";
+import {
+  balanceNotice,
+  closedNotice,
+  paymentNotice,
+  topupNotice,
+  withdrawalNotice,
+  wonNotice,
+} from "./templates";
 
 /**
  * The participant side of an event. These are called from the same places the
@@ -14,16 +21,48 @@ export async function notifyPaymentSettled(input: {
   label: string;
   round: number;
   seatNumber: number;
+  fromBalance?: boolean;
 }) {
   await emitNotices([
     {
       accountId: input.accountId,
       event: "payment_settled",
-      body: paymentNotice({
-        label: input.label,
-        round: input.round,
-        seatNumber: input.seatNumber,
-      }),
+      body: input.fromBalance
+        ? balanceNotice({ seatNumber: input.seatNumber })
+        : paymentNotice({
+            label: input.label,
+            round: input.round,
+            seatNumber: input.seatNumber,
+          }),
+    },
+  ]);
+}
+
+export async function notifyTopup(input: {
+  accountId: string;
+  cents: number;
+  balanceCents: number;
+}) {
+  await emitNotices([
+    {
+      accountId: input.accountId,
+      event: "wallet_topup",
+      body: topupNotice({ cents: input.cents, balanceCents: input.balanceCents }),
+    },
+  ]);
+}
+
+/** Sent when the owner hands the money over, not when the request is made. */
+export async function notifyWithdrawalPaid(input: {
+  accountId: string;
+  cents: number;
+  balanceCents: number;
+}) {
+  await emitNotices([
+    {
+      accountId: input.accountId,
+      event: "withdrawal_paid",
+      body: withdrawalNotice({ cents: input.cents, balanceCents: input.balanceCents }),
     },
   ]);
 }

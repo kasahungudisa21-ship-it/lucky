@@ -6,9 +6,10 @@ import { prisma } from "@/lib/db";
 import { houseDetail } from "@/lib/repo";
 import { formatEtb } from "@/lib/money";
 import { fullHousePotCents, fullHousePrizeShares, priceBreakdown } from "@/lib/pricing";
-import { t } from "@/lib/ui";
+import { currentLang, text } from "@/lib/locale";
 
 export default async function HousePage({ params }: { params: Promise<{ houseId: string }> }) {
+  const [t, lang] = await Promise.all([text(), currentLang()]);
   const { houseId } = await params;
   const account = await currentAccount();
   if (!account) redirect("/login");
@@ -94,17 +95,14 @@ export default async function HousePage({ params }: { params: Promise<{ houseId:
         </div>
 
         <HouseBoard
+          lang={lang}
           houseId={detail.house.id}
           label={detail.house.label}
           priceCents={price.priceCents}
           feeCents={price.serviceFeeCents}
           potPartCents={price.potPartCents}
           seats={detail.seats}
-          mine={
-            detail.mine
-              ? { entryId: detail.mine.id, seatNumber: detail.mine.seatNumber, status: detail.mine.status }
-              : null
-          }
+          mine={detail.mine}
         />
       </div>
 

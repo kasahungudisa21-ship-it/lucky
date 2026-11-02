@@ -30,6 +30,27 @@ export function paymentSettledAlert(input: {
 
 export type PlaceLine = { seatNumber: number; cents: number };
 
+/**
+ * A number paid from the wallet ledger. It is logged apart from a gateway
+ * payment because no new money arrives: the cash was reported at top-up time.
+ */
+export function seatFromBalanceAlert(input: {
+  label: string;
+  round: number;
+  seatNumber: number;
+  amountCents: number;
+}): AlertBody {
+  return {
+    subject: t("alert.balanceSubject"),
+    text: t("alert.balance", [
+      input.label,
+      input.round,
+      input.seatNumber,
+      birr(input.amountCents),
+    ]),
+  };
+}
+
 export function drawSettledAlert(input: {
   label: string;
   round: number;
@@ -93,5 +114,27 @@ export function gatewayErrorAlert(reason: string): AlertBody {
     subject: t("alert.gatewaySubject"),
     // the gateway's own words stay ASCII, they are not part of the catalogue
     text: `${t("alert.gateway")}: ${reason.slice(0, 200)}`,
+  };
+}
+
+/**
+ * Balance money arrived. The owner is told the amount and the gateway order id
+ * only: which participant topped up is read on the dashboard, never in a message
+ * that travels through a third-party channel.
+ */
+export function walletTopupAlert(input: {
+  merchOrderId: string;
+  amountCents: number;
+}): AlertBody {
+  return {
+    subject: t("alert.topupSubject"),
+    text: t("alert.topup", [formatEtb(input.amountCents), input.merchOrderId]),
+  };
+}
+
+export function withdrawalAlert(input: { amountCents: number }): AlertBody {
+  return {
+    subject: t("alert.withdrawSubject"),
+    text: t("alert.withdraw", [formatEtb(input.amountCents)]),
   };
 }

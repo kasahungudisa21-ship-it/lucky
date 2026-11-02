@@ -14,6 +14,11 @@ export function paymentNotice(input: { label: string; round: number; seatNumber:
   return t("notice.payment", [input.label, input.round, input.seatNumber]);
 }
 
+/** The same confirmation, worded for money that was already in the wallet. */
+export function balanceNotice(input: { seatNumber: number }): string {
+  return t("wallet.paidFromBalance", [input.seatNumber]);
+}
+
 export function wonNotice(input: {
   label: string;
   round: number;
@@ -37,4 +42,12 @@ export function closedNotice(input: { label: string }): string {
 
 export function linkedNotice(): string {
   return t("notice.linked", []);
+}
+
+export function topupNotice(input: { cents: number; balanceCents: number }): string {
+  return t("notice.topup", [formatEtb(input.cents), formatEtb(input.balanceCents)]);
+}
+
+export function withdrawalNotice(input: { cents: number; balanceCents: number }): string {
+  return t("notice.withdrawal", [formatEtb(input.cents), formatEtb(input.balanceCents)]);
 }

@@ -3,9 +3,13 @@ import { prisma } from "@/lib/db";
 import { currentAccount } from "@/lib/auth";
 import { resolveMode, settlePayment } from "@/lib/services/payments";
 
+/** A seat order is owned through its entry, a top-up order through its wallet. */
 async function ownedPayment(merchOrderId: string, accountId: string) {
   return prisma.payment.findFirst({
-    where: { merchOrderId, entry: { accountId } },
+    where: {
+      merchOrderId,
+      OR: [{ entry: { is: { accountId } } }, { wallet: { is: { accountId } } }],
+    },
     include: { entry: { select: { id: true, houseId: true, seatNumber: true, status: true } } },
   });
 }
@@ -25,8 +29,9 @@ export async function GET(
     status: payment.status,
     paid: payment.status === "success",
     amountCents: payment.amountCents,
-    entryId: payment.entryId,
-    seatNumber: payment.entry.seatNumber,
+    purpose: payment.purpose,
+    entryId: payment.entry?.id ?? null,
+    seatNumber: payment.entry?.seatNumber ?? null,
   });
 }
 

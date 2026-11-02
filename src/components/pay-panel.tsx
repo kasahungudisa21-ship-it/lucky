@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { formatEtb } from "@/lib/money";
-import { t } from "@/lib/ui";
+import { tr, type Lang } from "@/lib/ui";
 
 export function PayPanel({
   merchOrderId,
@@ -15,9 +15,11 @@ export function PayPanel({
   prizeCents,
   feeCents,
   amountCents,
+  balanceCents,
   payee,
   status,
   mode,
+  lang,
 }: {
   merchOrderId: string;
   entryId: string;
@@ -27,10 +29,14 @@ export function PayPanel({
   prizeCents: number;
   feeCents: number;
   amountCents: number;
+  /** what the participant's balance can pay right now */
+  balanceCents: number;
   payee: string | null;
   status: string;
   mode: "telebirr" | "simulate";
+  lang: Lang;
 }) {
+  const t = tr(lang);
   const router = useRouter();
   const [paid, setPaid] = useState(status === "success");
   const [message, setMessage] = useState<string | null>(null);
@@ -82,6 +88,42 @@ export function PayPanel({
     router.refresh();
   }
 
+  /**
+   * Money that is already on the participant's balance needs no second gateway
+   * trip, so this settles the number inside the app. The server re-checks the
+   * balance, so a stale figure here can only fail, never overspend.
+   */
+  async function payFromWallet() {
+    setBusy(true);
+    setMessage(null);
+    try {
+      const response = await fetch(`/api/entries/${entryId}/pay-balance`, { method: "POST" });
+      const payload = (await response.json().catch(() => ({}))) as {
+        paid?: boolean;
+        error?: string;
+        balanceCents?: number;
+        requiredCents?: number;
+      };
+      if (!response.ok || !payload.paid) {
+        setMessage(
+          payload.error === "insufficient_balance"
+            ? t("wallet.insufficient", [
+                formatEtb(payload.balanceCents ?? 0),
+                formatEtb(payload.requiredCents ?? amountCents),
+              ])
+            : t("pay.stillPending"),
+        );
+        return;
+      }
+      setPaid(true);
+      router.refresh();
+    } catch {
+      setMessage(t("pay.failed"));
+    } finally {
+      setBusy(false);
+    }
+  }
+
   return (
     <div className="stack">
       <div className="rows">
@@ -131,12 +173,24 @@ export function PayPanel({
             <button type="button" className="btn btn-primary" onClick={openCheckout} disabled={busy}>
               {t("pay.open")}
             </button>
+            <button
+              id="pay-from-balance"
+              type="button"
+              className="btn btn-ghost"
+              onClick={payFromWallet}
+              disabled={busy}
+            >
+              {t("wallet.payFromBalance", [formatEtb(amountCents)])}
+            </button>
             {mode === "simulate" && (
               <button type="button" className="btn btn-ghost" onClick={simulatePaid} disabled={busy}>
                 {t("pay.simulateButton")}
               </button>
             )}
           </div>
+          <p className="note">
+            {t("wallet.balance")}: {formatEtb(balanceCents)} {t("common.birr")}
+          </p>
           {mode === "simulate" && <p className="note">{t("pay.simulated")}</p>}
         </>
       )}

@@ -251,11 +251,11 @@
     "back": "This number was taken a moment ago. Choose another free number.",
     "score": 0.78
   },
-  "error.alreadyHolds": {
-    "en": "You already hold a number in this house. Release it before choosing another.",
-    "am": "አስቀድመው በዚህ ቤት ውስጥ ቁጥር ይይዛሉ። ሌላ ከመምረጥዎ በፊት ይልቀቁት።",
+  "error.numberLimit": {
+    "en": "You already hold {0} numbers in this house, the most one person may keep. Release one before choosing another.",
+    "am": "በዚህ ቤት ውስጥ አስቀድመው {0} ቁጥሮችን ይይዛሉ። ሌላ ከመምረጥዎ በፊት አንዱን ይልቀቁት።",
     "source": "authored",
-    "back": "",
+    "back": "You already have {0} numbers in this house, which most people can hold. Release one before choosing the other.",
     "score": null
   },
   "error.houseClosed": {
@@ -376,6 +376,20 @@
     "source": "translated",
     "back": "You have selected the number {0}.",
     "score": 0.67
+  },
+  "house.holdLeft": {
+    "en": "Time left on this number: {0}.",
+    "am": "የቀረው ጊዜ {0}።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "house.holdGone": {
+    "en": "The time left on this number has ended.",
+    "am": "ጊዜው አልቋል።",
+    "source": "authored",
+    "back": "",
+    "score": null
   },
   "house.priceRule": {
     "en": "One participant pays {0} birr here.",
@@ -685,6 +699,20 @@
     "back": "",
     "score": null
   },
+  "rules.hold": {
+    "en": "One person may hold up to {0} numbers in a house.",
+    "am": "አንድ ሰው በአንድ ቤት ውስጥ እስከ {0} ቁጥሮች ሊይዝ ይችላል።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "rules.holdTitle": {
+    "en": "Numbers one person may hold",
+    "am": "አንድ ሰው ሊይዝ የሚችላቸው ቁጥሮች",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
   "rules.pay": {
     "en": "You pay through your Telebirr digital wallet. A number becomes yours only after Telebirr confirms the payment.",
     "am": "በቴሌቢር ዲጂታል መለያዎ ክፍያዎን ይከፍላሉ። ቴሌቢር ክፍያዎን ሲያረጋገጥ ብቻ ቁጥሩ የእርስዎ ይሆናል።",
@@ -702,6 +730,20 @@
   "rules.draw": {
     "en": "When the house is full the lottery draw runs automatically between its participants. Three numbers take the whole prize pool: 1st, 2nd and 3rd.",
     "am": "ቤቱ ሲሞላ ዕጣ ማውጫው በራስ-ሰር በቤቱ ተሳታፊዎች መካከል ይካሄዳል። 3 ቁጥሮች ሙሉውን የሽልማት ገንዘብ ይወሰዳሉ፥ 1ኛ፣ 2ኛ፣ 3ኛ።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "rules.fair": {
+    "en": "The three places go to different people. As long as a person who has not won yet has a number left, no person gets more than one place.",
+    "am": "ሦስቱ ቦታዎች ወደ ተለያዩ ሰዎች ይሄዳሉ። እስካሁን ያላሸነፈ ሰው ቁጥር እስካለው ድረስ ማንም ሰው ከአንድ ቦታ በላይ አያገኝም።",
+    "source": "authored",
+    "back": "",
+    "score": null
+  },
+  "rules.fairTitle": {
+    "en": "Who the three places go to",
+    "am": "ሦስቱ ቦታዎች ለማን ነው የሚሄዱት",
     "source": "authored",
     "back": "",
     "score": null
@@ -1106,8 +1148,8 @@
     "score": null
   },
   "notice.won": {
-    "en": "You won. House {0}, round {1}, number {2} took place {3}. Your prize is {4} birr.",
-    "am": "አሸነፉ። ቤት {0}፣ ዙር {1}፣ ቁጥር {2} {3} ደረጃ። ሽልማትዎ {4} ብር ነው።",
+    "en": "You won. House {0}, round {1}, number {2} took place {3}. Your prize of {4} birr was added to your balance.",
+    "am": "አሸነፉ። ቤት {0}፣ ዙር {1}፣ ቁጥር {2} {3} ደረጃ። ሽልማትዎ {4} ብር በሚዛንዎ ላይ ተጨምሯል።",
     "source": "authored",
     "back": "",
     "score": null
@@ -1209,5 +1251,355 @@
     "source": "authored",
     "back": "",
     "score": null
+  },
+  "alert.topupSubject": {
+    "en": "Wallet balance added",
+    "am": "ሚዛን ተጨምሯል",
+    "source": "authored",
+    "back": "Added wallet balance.",
+    "score": null
+  },
+  "alert.topup": {
+    "en": "Telebirr added {0} birr to a participant balance. Payment number {1}. The participant and the new balance are on the dashboard.",
+    "am": "ቴሌቢር {0} ብር ለተሳታፊ ሚዛን ጨምሯል። የክፍያ ቁጥር {1}። ተሳታፊው እና አዲሱ ሚዛን በዳሽቦርዱ ላይ ናቸው።",
+    "source": "authored",
+    "back": "Telebir has added {0} to participant balance. Command {1}. The person and the new balance are on the dashboard.",
+    "score": null
+  },
+  "alert.withdrawSubject": {
+    "en": "Withdrawal waiting",
+    "am": "የማውጣት ጥያቄ",
+    "source": "authored",
+    "back": "Waiting for exit",
+    "score": null
+  },
+  "alert.withdraw": {
+    "en": "A participant asks to take {0} birr out of their balance. The number and the request are on the dashboard.",
+    "am": "አንድ ተሳታፊ {0} ብር ከሚዛናቸው ለማውጣት ይጠይቃል። ቁጥሩ እና ጥያቄው በዳሽቦርዱ ላይ ናቸው።",
+    "source": "authored",
+    "back": "A participant requests to withdraw {0} from their account. The number and question are on the dashboard.",
+    "score": null
+  },
+  "alert.balanceSubject": {
+    "en": "Paid from balance",
+    "am": "ከሚዛን የተከፈለ",
+    "source": "authored",
+    "back": "Billed From Account - Home {0}",
+    "score": null
+  },
+  "alert.balance": {
+    "en": "A number was paid from a participant balance. House {0}, round {1}, number {2}, {3} came out of the balance. No new money arrived from Telebirr.",
+    "am": "ቁጥር ከሚዛን የተከፈለ። ቤት {0}፣ ዙር {1}፣ ቁጥር {2}፣ {3} ከሚዛን ወጣ። ከቴሌቢር አዲስ ገንዘብ አልመጣም።",
+    "source": "authored",
+    "back": "A participant paid a number from their wallet account. House {0}, Round {1}, Number {2}, {3} are out of their account. No new funds received from Telebir.",
+    "score": null
+  },
+  "event.seat_from_balance": {
+    "en": "Paid from balance",
+    "am": "ከሚዛን የተከፈለ",
+    "source": "authored",
+    "back": "Deducted from balance.",
+    "score": null
+  },
+  "event.wallet_topup": {
+    "en": "Balance added",
+    "am": "ሚዛን ተጨምሯል",
+    "source": "authored",
+    "back": "Added balance.",
+    "score": null
+  },
+  "event.withdrawal_requested": {
+    "en": "Withdrawal asked",
+    "am": "ማውጣት ተጠየቀ",
+    "source": "authored",
+    "back": "He asked to leave",
+    "score": null
+  },
+  "event.withdrawal_paid": {
+    "en": "Withdrawal paid",
+    "am": "ማውጣት ተከፍሏል",
+    "source": "authored",
+    "back": "Withdrawal paid.",
+    "score": null
+  },
+  "notice.topup": {
+    "en": "Telebirr added {0} birr to your balance. Your balance is now {1} birr.",
+    "am": "ቴሌቢር {0} ብር ለሚዛንዎ ተጨምሯል። አሁን ሚዛንዎ {1} ብር ነው።",
+    "source": "authored",
+    "back": "Telebeer has verified your recharge. {0} Birr has been added to your account which is now {1}.",
+    "score": null
+  },
+  "notice.withdrawal": {
+    "en": "Your withdrawal was paid. {0} birr came out and your balance is now {1} birr.",
+    "am": "የማውጣት ጥያቄዎ ተከፍሏል። {0} ብር ወጣ። ሚዛንዎ አሁን {1} ብር ነው።",
+    "source": "authored",
+    "back": "The owner has paid {0} Birr. Your balance is now {1} Rs.",
+    "score": null
+  },
+  "wallet.title": {
+    "en": "My balance",
+    "am": "የእኔ ሚዛን",
+    "source": "translated",
+    "back": "My balance",
+    "score": 1
+  },
+  "wallet.balance": {
+    "en": "Balance on your wallet",
+    "am": "የቦርሳዎ ሚዛን",
+    "source": "authored",
+    "back": "Balance your wallet",
+    "score": null
+  },
+  "wallet.topupTitle": {
+    "en": "Telebirr balance top-up",
+    "am": "የቴሌቢር ሚዛን መጨመር",
+    "source": "authored",
+    "back": "Topping up the balance of Telebir",
+    "score": null
+  },
+  "wallet.topup": {
+    "en": "Add to your balance",
+    "am": "ሚዛን ይጨምሩ",
+    "source": "authored",
+    "back": "Add to your account",
+    "score": null
+  },
+  "wallet.topupRow": {
+    "en": "Balance top-up",
+    "am": "ሚዛን መጨመር",
+    "source": "authored",
+    "back": "Balancing the filling",
+    "score": null
+  },
+  "wallet.topupWallet": {
+    "en": "Your Telebirr digital wallet is charged {0} birr. The money goes onto your balance.",
+    "am": "የቴሌቢር ዲጂታል ቦርሳዎ {0} ብር ተከፍሏል። ገንዘቡ በሚዛንዎ ላይ ይጨምራል።",
+    "source": "authored",
+    "back": "Your Telebir Digital Wallet {0} will be debited and the funds will go to your balance.",
+    "score": null
+  },
+  "wallet.topupDone": {
+    "en": "{0} birr was added to your balance. Your balance is now {1} birr.",
+    "am": "{0} ብር ለሚዛንዎ ተጨምሯል። አሁን ሚዛንዎ {1} ብር ነው።",
+    "source": "authored",
+    "back": "{0} Birr has been added to your account which is now {1}.",
+    "score": null
+  },
+  "wallet.credited": {
+    "en": "Added to balance",
+    "am": "ሚዛን ተጨምሯል",
+    "source": "authored",
+    "back": "Added to balance.",
+    "score": null
+  },
+  "wallet.awaitingTopup": {
+    "en": "Waiting for Telebirr",
+    "am": "ቴሌቢርን በመጠበቅ ላይ",
+    "source": "translated",
+    "back": "Waiting for the TV",
+    "score": 0.67
+  },
+  "wallet.amount": {
+    "en": "Amount to add",
+    "am": "የሚጨመርበት መጠን",
+    "source": "translated",
+    "back": "Amount to be added",
+    "score": 0.5
+  },
+  "wallet.min": {
+    "en": "Add between {0} and {1} birr.",
+    "am": "በ{0} እና {1} ብር መካከል ይጨምሩ።",
+    "source": "translated",
+    "back": "Add between {0} and {1} bucks.",
+    "score": 0.75
+  },
+  "wallet.history": {
+    "en": "Balance movements",
+    "am": "የሚዛን እንቅስቃሴዎች",
+    "source": "authored",
+    "back": "balancing activities",
+    "score": null
+  },
+  "wallet.empty": {
+    "en": "Nothing has moved on your balance yet. Add money and it shows here.",
+    "am": "እስካሁን ምንም ነገር በእርስዎ ሚዛን ላይ አልተንቀሳቀሰም። ገንዘብ ጨምር እና እዚህ ይታያል።",
+    "source": "authored",
+    "back": "Nothing has been moved to your balance yet. Add money and it will appear here.",
+    "score": null
+  },
+  "wallet.payFromBalance": {
+    "en": "Pay {0} birr from your balance",
+    "am": "{0} ብር ከሚዛንዎ ይክፈሉ።",
+    "source": "authored",
+    "back": "Pay {0} Birr from your account.",
+    "score": null
+  },
+  "wallet.paidFromBalance": {
+    "en": "Paid from your balance. Number {0} is yours for this round.",
+    "am": "ከሚዛንዎ የተከፈለ። ቁጥር {0} ለዚህ ዙር የእርስዎ ነው።",
+    "source": "authored",
+    "back": "Deducted from your account. The number {0} is yours for this round.",
+    "score": null
+  },
+  "wallet.insufficient": {
+    "en": "Your balance is {0} birr and this number asks {1} birr.",
+    "am": "ሚዛንዎ {0} ብር ነው። ይህ ቁጥር {1} ብር ይጠይቃል።",
+    "source": "authored",
+    "back": "Your balance is {0} and this number is {1} Birr. Add the difference first.",
+    "score": null
+  },
+  "wallet.withdraw": {
+    "en": "Take money out",
+    "am": "ገንዘብ ማውጣት",
+    "source": "authored",
+    "back": "Spend money",
+    "score": null
+  },
+  "wallet.withdrawAmount": {
+    "en": "Amount to take out",
+    "am": "የሚወጣበት መጠን",
+    "source": "translated",
+    "back": "Amount of withdrawal",
+    "score": 0.33
+  },
+  "wallet.withdrawRange": {
+    "en": "Ask to take out between {0} and {1} birr.",
+    "am": "በ{0} እና {1} ብር መካከል ለማውጣት ይጠይቁ።",
+    "source": "translated",
+    "back": "Ask to withdraw between {0} and {1} rupees.",
+    "score": 0.5
+  },
+  "wallet.withdrawButton": {
+    "en": "Ask for this withdrawal",
+    "am": "ይህንን ማውጣት ይጠይቁ",
+    "source": "authored",
+    "back": "Ask for this exit",
+    "score": null
+  },
+  "wallet.withdrawPending": {
+    "en": "Your withdrawal of {0} birr is waiting for the owner.",
+    "am": "{0} ብር ማውጣትህ ባለቤቱን እየጠበቀ ነው።",
+    "source": "translated",
+    "back": "{0} Your withdrawal is waiting for the owner.",
+    "score": 0.86
+  },
+  "wallet.withdrawPaid": {
+    "en": "Withdrawal paid",
+    "am": "ማውጣት ተከፍሏል",
+    "source": "authored",
+    "back": "Withdrawal paid.",
+    "score": null
+  },
+  "wallet.withdrawRejected": {
+    "en": "Withdrawal refused",
+    "am": "ማውጣት አልተፈቀደም",
+    "source": "authored",
+    "back": "He refused to leave.",
+    "score": null
+  },
+  "wallet.kindTopup": {
+    "en": "Top-up",
+    "am": "መጨመር",
+    "source": "authored",
+    "back": "fill out",
+    "score": null
+  },
+  "wallet.kindSeat": {
+    "en": "Number paid",
+    "am": "የተከፈለ ቁጥር",
+    "source": "translated",
+    "back": "Paid number",
+    "score": 1
+  },
+  "wallet.kindPrize": {
+    "en": "Prize",
+    "am": "ሽልማት",
+    "source": "translated",
+    "back": "Award",
+    "score": 0
+  },
+  "wallet.kindWithdrawal": {
+    "en": "Withdrawal",
+    "am": "ማውጣት",
+    "source": "authored",
+    "back": "exit",
+    "score": null
+  },
+  "wallet.kindRefund": {
+    "en": "Refund",
+    "am": "ተመላሽ ገንዘብ",
+    "source": "translated",
+    "back": "Refund",
+    "score": 1
+  },
+  "wallet.rules": {
+    "en": "The money you add stays on your balance. A number is paid from it and a prize is added to it.",
+    "am": "የጨመሩት ገንዘብ በሚዛንዎ ላይ ይቆያል። ቁጥር ከዚህ ይከፈላል። ሽልማት በሚዛንዎ ላይ ይጨምራል።",
+    "source": "authored",
+    "back": "The money you add will stay in your account. A number is paid from it, and a reward is added to it.",
+    "score": null
+  },
+  "dash.wallets": {
+    "en": "Balances",
+    "am": "ሚዛኖች",
+    "source": "translated",
+    "back": "Scales",
+    "score": 0
+  },
+  "dash.balanceTotal": {
+    "en": "Money held on balances",
+    "am": "በሚዛኖች የተያዘ ገንዘብ",
+    "source": "authored",
+    "back": "Money held in the account balance",
+    "score": null
+  },
+  "dash.balanceCount": {
+    "en": "Wallets holding money",
+    "am": "ገንዘብ ያላቸው ቦርሳዎች",
+    "source": "authored",
+    "back": "Wallets with money",
+    "score": null
+  },
+  "dash.withdrawals": {
+    "en": "Withdrawal requests",
+    "am": "የማውጣት ጥያቄዎች",
+    "source": "authored",
+    "back": "Evacuation requests",
+    "score": null
+  },
+  "dash.noWithdrawals": {
+    "en": "No withdrawal request.",
+    "am": "ማውጣት ጥያቄ የለም።",
+    "source": "authored",
+    "back": "Exit is not waiting.",
+    "score": null
+  },
+  "dash.markPaid": {
+    "en": "Hand this over",
+    "am": "ይህንን አስረክቡ",
+    "source": "translated",
+    "back": "Submit this",
+    "score": 0.33
+  },
+  "dash.reject": {
+    "en": "Refuse",
+    "am": "እምቢ",
+    "source": "translated",
+    "back": "Refuse",
+    "score": 1
+  },
+  "dash.withdrawalFrom": {
+    "en": "Number {0} asks for {1} birr. The new balance would be {2} birr.",
+    "am": "ቁጥር {0} {1} ብር ይጠይቃል። አዲሱ ሚዛን {2} ብር ይሆናል።",
+    "source": "authored",
+    "back": "The number {0} requires {1}. Scale after it: # 2 #.",
+    "score": null
+  },
+  "dash.pending": {
+    "en": "waiting",
+    "am": "በመጠባበቅ ላይ",
+    "source": "translated",
+    "back": "Waiting",
+    "score": 1
   }
 }

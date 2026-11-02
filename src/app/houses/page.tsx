@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { houseSummaries } from "@/lib/repo";
 import { formatEtb } from "@/lib/money";
-import { t } from "@/lib/ui";
+import { text } from "@/lib/locale";
 import { currentAccount } from "@/lib/auth";
 
 export default async function HousesPage() {
+  const t = await text();
   const [account, houses] = await Promise.all([currentAccount(), houseSummaries()]);
 
   return (

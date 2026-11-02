@@ -2,10 +2,17 @@ node_modules
 .next
 .next-audit
 data
-prisma/dev.db
-prisma/dev.db-journal
 .env
+.env.*
+!.env.example
 *.log
 *.tsbuildinfo
 .git
 .DS_Store
+
+# the development database must never reach an image: it holds real wallet
+# numbers and PIN hashes, and the container gets its own file under /data
+**/*.db
+**/*.db-journal
+**/dev.db*
+prisma/prisma

@@ -15,6 +15,7 @@
     "db:studio": "prisma studio",
     "verify": "node --env-file=.env scripts/verify-flow.mjs",
     "check:signer": "tsx scripts/check-signer.mjs",
+    "check:gateway": "node --env-file=.env --import tsx scripts/dryrun-gateway.mjs",
     "i18n": "node scripts/gen-i18n.mjs",
     "setup": "prisma db push && tsx prisma/seed.ts"
   },

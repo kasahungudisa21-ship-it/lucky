@@ -10,7 +10,13 @@ import { smsTo, telegramTo } from "@/lib/alerts/send";
  * exist, so nobody is ever sent to and nobody blocks the queue.
  */
 
-export type NoticeEvent = "payment_settled" | "draw_won" | "draw_closed" | "telegram_linked";
+export type NoticeEvent =
+  | "payment_settled"
+  | "draw_won"
+  | "draw_closed"
+  | "telegram_linked"
+  | "wallet_topup"
+  | "withdrawal_paid";
 
 /** `sms: false` keeps a message inside the channel it belongs to, e.g. the
  * confirmation that a Telegram chat was just linked must not arrive by SMS. */

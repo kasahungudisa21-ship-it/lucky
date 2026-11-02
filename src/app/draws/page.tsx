@@ -1,11 +1,12 @@
 import { Ball } from "@/components/ball";
 import { recentDraws } from "@/lib/repo";
 import { formatEtb } from "@/lib/money";
-import { t } from "@/lib/ui";
+import { text } from "@/lib/locale";
 
 export const dynamic = "force-dynamic";
 
 export default async function DrawsPage() {
+  const t = await text();
   const draws = await recentDraws();
 
   return (
@@ -81,6 +82,8 @@ export default async function DrawsPage() {
                   <td>
                     {draw.payoutStatus === "pending" ? (
                       <span className="badge">{t("draws.payoutPending")}</span>
+                    ) : draw.payoutStatus === "credited" ? (
+                      <span className="badge">{t("wallet.credited")}</span>
                     ) : (
                       <span className="badge">{draw.payoutStatus}</span>
                     )}

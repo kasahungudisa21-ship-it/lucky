@@ -24,14 +24,25 @@ function pickIndex(seed: Buffer, count: number, place: number): number {
   }
 }
 
-type Contender = { id: string; seatNumber: number };
+type Contender = { id: string; seatNumber: number; accountId: string };
 
-/** 1st, 2nd and 3rd drawn without replacement, in that order. */
+/**
+ * 1st, 2nd and 3rd drawn without replacement, in that order. Because one buyer
+ * may now hold several numbers, a place goes to an account that has not placed
+ * yet whenever the pool still has one — otherwise three numbers in the same
+ * hands would sweep the whole pot. Only when every remaining number belongs to
+ * someone already placed does a place fall to a repeat.
+ */
 function pickPlaces(seed: Buffer, pool: Contender[]): Contender[] {
   const remaining = [...pool];
   const places: Contender[] = [];
   for (let place = 1; place <= 3; place += 1) {
-    places.push(remaining.splice(pickIndex(seed, remaining.length, place), 1)[0]);
+    const placed = new Set(places.map((entry) => entry.accountId));
+    const fresh = remaining.filter((entry) => !placed.has(entry.accountId));
+    const candidates = fresh.length > 0 ? fresh : remaining;
+    const chosen = candidates[pickIndex(seed, candidates.length, place)];
+    places.push(chosen);
+    remaining.splice(remaining.indexOf(chosen), 1);
   }
   return places;
 }
@@ -126,6 +137,30 @@ export async function runDrawIfComplete(
       where: { houseId },
       data: { status: "open", heldUntil: null },
     });
+
+    // the three prizes land on the winners' balances in this same transaction,
+    // so a settled draw always has exactly one ledger row per place
+    const prizes = [
+      { winner: first, cents: shares.firstCents },
+      { winner: second, cents: shares.secondCents },
+      { winner: third, cents: shares.thirdCents },
+    ];
+    for (const prize of prizes) {
+      const wallet = await tx.wallet.upsert({
+        where: { accountId: prize.winner.accountId },
+        update: {},
+        create: { accountId: prize.winner.accountId },
+      });
+      await tx.ledgerEntry.create({
+        data: {
+          walletId: wallet.id,
+          kind: "prize",
+          refId: `${draw.id}:${prize.winner.id}`,
+          deltaCents: prize.cents,
+        },
+      });
+    }
+    await tx.draw.update({ where: { id: draw.id }, data: { payoutStatus: "credited" } });
 
     return {
       drawId: draw.id,

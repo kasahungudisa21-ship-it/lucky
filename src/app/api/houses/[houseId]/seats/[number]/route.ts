@@ -5,7 +5,7 @@ import { currentAccount } from "@/lib/auth";
 const reasonStatus: Record<string, number> = {
   house_closed: 409,
   number_taken: 409,
-  already_holds_number: 409,
+  number_limit: 409,
   number_out_of_range: 400,
 };
 
