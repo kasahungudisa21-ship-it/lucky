@@ -8,6 +8,7 @@ dev.db-journal
 *.bak-*
 .env
 *.tsbuildinfo
+*.log
 .DS_Store
 data
 docker-compose.override.yml
